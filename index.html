@@ -2084,14 +2084,27 @@ LANDING PAGE
         </div>
       </div>
 
-      <div class="countdown-body" style="background: rgba(7,26,14,0.88); padding-top: 40px;">
-        <div class="mk-logo-text secondary reveal" style="opacity: 0.4; font-size: 5rem;">MK</div>
+      <div class="countdown-body" style="background: rgba(7,26,14,0.88); padding-top: 40px; text-align: center;">
         <div class="reveal">
-          <p class="quote-text" style="font-style: italic; letter-spacing: 1px;">
+          <p class="quote-text"
+            style="font-style: italic; letter-spacing: 1px; font-size: 1.8rem; line-height: 1.4; margin-bottom: 20px;">
             &#8220;Still choosing each other, every day,<br>every moment&#8230;&#8221;
           </p>
-          <p class="date-banner" style="color: var(--gold); font-weight: 600;">&#8212; September 12, 2026 &#8212;</p>
+      
+          <p class="date-banner"
+            style="color: var(--gold); font-weight: 700; font-size: 1.5rem; letter-spacing: 3px; text-transform: uppercase;">
+            &#8212; September 12, 2026 &#8212;
+          </p>
         </div>
+      
+        <div class="cd-grid reveal">
+          <div class="cd-box"><span class="cd-num" id="cd-d">--</span><span class="cd-label">Days</span></div>
+          <div class="cd-box"><span class="cd-num" id="cd-h">--</span><span class="cd-label">Hours</span></div>
+          <div class="cd-box"><span class="cd-num" id="cd-m">--</span><span class="cd-label">Minutes</span></div>
+          <div class="cd-box"><span class="cd-num" id="cd-s">--</span><span class="cd-label">Seconds</span></div>
+        </div>
+        <a class="cal-btn reveal" href="#" onclick="addCal(event)">&#128197;&nbsp; Add to Calendar</a>
+      </div>
 
         <div class="cd-grid reveal">
           <div class="cd-box"><span class="cd-num" id="cd-d">--</span><span class="cd-label">Days</span></div>
