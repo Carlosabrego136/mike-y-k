@@ -1116,49 +1116,44 @@ footer p {
     </div>
   </section>
 
-  <!-- LOCATION -->
-  <section id="location" class="section" style="background: var(--dark-green); padding: 80px 20px;">
-    <div class="sec-header reveal">
+  <section id="location" class="section" style="background: var(--dark-green); padding: 60px 0;">
+    <div class="sec-header reveal" style="padding: 0 20px;">
       <span class="sec-label" style="color: var(--gold-light); font-family: 'Cinzel'; letter-spacing: 4px; font-size: 0.7rem; text-transform: uppercase;">Venue</span>
       <h2 class="sec-title"
-        style="font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: #fff; margin-top: 0.5rem;">The Celebration
-      </h2>
-      <div class="gold-div" style="width:190px; margin: 1rem auto; display: flex; align-items: center; gap: 10px;">
+        style="font-family: 'Great Vibes', cursive; font-size: clamp(3rem, 8vw, 4rem); color: #fff; margin-top: 0.5rem;">
+        The Celebration</h2>
+      <div class="gold-div" style="width:160px; margin: 1rem auto; display: flex; align-items: center; gap: 10px;">
         <span style="flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent);"></span>
-        <div class="dia" style="width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg);"></div>
+        <div class="dia" style="width: 5px; height: 5px; background: var(--gold); transform: rotate(45deg);"></div>
         <span style="flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent);"></span>
       </div>
     </div>
   
-    <div class="loc-card reveal"
-      style="max-width: 500px; margin: 2rem auto; background: rgba(13, 42, 20, 0.4); border: 1px solid rgba(201, 168, 76, 0.2); border-radius: 15px; overflow: hidden; backdrop-filter: blur(10px);">
-      <h3 class="venue-name"
-        style="font-family: 'Cinzel', serif; color: var(--gold-light); padding: 20px; text-align: center; letter-spacing: 2px;">
-        Villa Punta del Cielo</h3>
+    <div class="reveal" style="width: 100%; margin-top: 2.5rem; position: relative;">
+      <div class="loc-map-wrap"
+        onclick="window.open('https://www.google.com/maps/search/?api=1&query=7837+E+White+Ln+Bakersfield+CA+93307')"
+        style="position: relative; cursor: pointer; line-height: 0; overflow: hidden; width: 100%;">
   
-      <div class="loc-map-wrap" onclick="window.open('https://maps.google.com/?q=7837+E+White+Ln+Bakersfield+CA+93307')"
-        style="position: relative; cursor: pointer; line-height: 0; overflow: hidden;">
-        <img src="imgs/Locacion.jpg" alt="Venue" style="width: 100%; height: auto; display: block; filter: brightness(0.9) contrast(1.1);">
+        <img src="imgs/Locacion.jpg" alt="Venue" style="width: 100%; height: auto; display: block; filter: brightness(0.8) contrast(1.1) sepia(0.2);">
+  
         <div class="loc-overlay"
-          style="position: absolute; inset: 0; background: rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; transition: background 0.3s;">
-          <span style="background: rgba(13, 32, 18, 0.8); color: var(--gold-light); padding: 10px 20px; border-radius: 30px; border: 1px solid var(--gold); font-family: 'Cinzel'; font-size: 0.7rem; letter-spacing: 2px;">📍 Get Directions</span>
+          style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(7,26,14,0.8) 0%, transparent 40%); display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 30px;">
+  
+          <h3
+            style="font-family: 'Cinzel', serif; color: var(--gold-light); letter-spacing: 3px; font-size: 1.2rem; margin-bottom: 15px; text-shadow: 2px 2px 10px rgba(0,0,0,0.8);">
+            Villa Punta del Cielo</h3>
+  
+          <span style="background: rgba(13, 32, 18, 0.9); color: var(--gold-light); padding: 12px 25px; border-radius: 2px; border: 1px solid var(--gold); font-family: 'Cinzel'; font-size: 0.7rem; letter-spacing: 3px; backdrop-filter: blur(5px);">
+              📍 OPEN MAPS
+            </span>
         </div>
       </div>
+    </div>
   
-      <div style="padding: 25px; text-align: center;">
-        <hr style="border: none; border-top: 1px dotted rgba(201, 168, 76, 0.3); margin: 0 0 15px 0;">
-        <p class="det-label"
-          style="font-family: 'Cinzel'; font-size: 0.6rem; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 5px;">
-          Address</p>
-        <p class="det-val" style="font-family: 'Lato'; color: var(--text-light); line-height: 1.6;">7837 E White Ln<br>Bakersfield, CA 93307
-        </p>
-        <hr style="border: none; border-top: 1px dotted rgba(201, 168, 76, 0.3); margin: 15px 0;">
-  
-        <a href="https://maps.google.com/?q=7837+E+White+Ln+Bakersfield+CA+93307" target="_blank" class="cal-btn"
-          style="display: inline-block; margin-top: 0.5rem; padding: 12px 30px; border: 1px solid var(--gold); color: var(--gold-light); text-decoration: none; font-family: 'Cinzel'; font-size: 0.7rem; letter-spacing: 2px; border-radius: 4px; transition: all 0.3s;">
-          📍 Get Directions
-        </a>
-      </div>
+    <div class="reveal" style="text-align: center; padding: 20px;">
+      <p style="font-family: 'Lato'; color: var(--gold-light); font-size: 0.8rem; letter-spacing: 1px; opacity: 0.8;">
+        7837 E White Ln, Bakersfield, CA 93307
+      </p>
     </div>
   </section>
 
