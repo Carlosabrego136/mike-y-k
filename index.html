@@ -415,7 +415,7 @@ LANDING PAGE
       filter: invert(1) hue-rotate(180deg) brightness(1.15) drop-shadow(0 0 32px rgba(201, 168, 76, 0.8));
       animation: logoEntranceImg 2s ease-out forwards, logoGlowReal 4s 2s ease-in-out infinite;
       user-select: none;
-      margin-bottom: 0;
+      margin-bottom: -15px;
     }
 
     .mk-logo-canvas-real {
@@ -424,7 +424,7 @@ LANDING PAGE
       display: block;
       animation: logoEntranceImg 2s ease-out forwards, logoGlowReal 4s 2s ease-in-out infinite;
       user-select: none;
-      margin-bottom: 0;
+      margin-bottom: -15px;
       filter: drop-shadow(0 0 32px rgba(201, 168, 76, 0.8)) brightness(1.15);
     }
 
@@ -596,7 +596,7 @@ LANDING PAGE
       position: absolute;
       inset: 0;
       z-index: 1;
-      background: linear-gradient(180deg, rgba(7, 26, 14, 0.4) 0%, rgba(7, 26, 14, 0.7) 50%, rgba(7, 26, 14, 0.4) 100%);
+      background: linear-gradient(180deg, rgba(7, 26, 14, 0.85) 0%, rgba(7, 26, 14, 0.5) 15%, rgba(7, 26, 14, 0.4) 50%, rgba(7, 26, 14, 0.5) 85%, rgba(7, 26, 14, 0.85) 100%);
     }
 
     .section-content {
@@ -704,7 +704,7 @@ LANDING PAGE
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding-top: 1vw;
+      padding-top: 4vw;
       z-index: 5;
       pointer-events: none;
     }
@@ -2027,7 +2027,7 @@ LANDING PAGE
         </div>
         <div style="text-align:center" class="reveal">
           <div class="dc-ring">
-            <span class="dc-icon">&#128084;</span>
+            <span class="dc-icon"><svg viewBox="0 0 64 64" width="52" height="52" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 18c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8-8-3.6-8-8z" fill="var(--gold)"/><path d="M36 18c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8-8-3.6-8-8z" fill="var(--gold-light)"/><path d="M16 56V36c0-4.4 3.6-8 8-8h8c4.4 0 8 3.6 8 8v20" stroke="var(--gold)" stroke-width="2" fill="none"/><path d="M24 28l4 8 4-8" stroke="var(--gold-dark)" stroke-width="1.5" fill="none"/><path d="M32 56V36c0-4.4 3.6-8 8-8h8c4.4 0 8 3.6 8 8v20" stroke="var(--gold-light)" stroke-width="2" fill="none"/><path d="M40 28v6M48 28v6" stroke="var(--gold-dark)" stroke-width="1.5"/><rect x="38" y="32" width="12" height="4" rx="1" fill="var(--gold-dark)"/></svg></span>
           </div>
           <p class="dc-top">Please wear</p>
           <p class="dc-main">Formal</p>
@@ -2197,24 +2197,22 @@ LANDING PAGE
         </div>
         <div class="rsvp-wrap">
           <div class="contact-list reveal">
-            <div class="contact-row">
-              <span class="cicon">&#128222;</span>
+            <a href="https://wa.me/16613647731" target="_blank" class="contact-row" style="text-decoration: none; transition: all 0.3s ease; border: 1px solid rgba(201,168,76,0.25);">
+              <span class="cicon" style="font-size: 1.4rem; color: #25D366;"><svg viewBox="0 0 24 24" width="22" height="22" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
               <div>
-                <p class="clabel">Kanisha</p>
-                <a href="tel:6613647731">661-364-7731</a>
+                <p class="clabel" style="color: var(--gold);">Kanisha</p>
+                <span style="color: rgba(255,255,255,0.85); font-size: 0.95rem;">661-364-7731</span>
               </div>
-            </div>
-            <div class="contact-row">
-              <span class="cicon">&#128222;</span>
+              <span style="margin-left: auto; font-size: 0.65rem; color: var(--gold-light); letter-spacing: 0.15em; font-family: 'Cinzel', serif;">CHAT</span>
+            </a>
+            <a href="https://wa.me/16613647730" target="_blank" class="contact-row" style="text-decoration: none; transition: all 0.3s ease; border: 1px solid rgba(201,168,76,0.25);">
+              <span class="cicon" style="font-size: 1.4rem; color: #25D366;"><svg viewBox="0 0 24 24" width="22" height="22" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
               <div>
-                <p class="clabel">Mike</p>
-                <a href="tel:6613647730">661-364-7730</a>
+                <p class="clabel" style="color: var(--gold);">Mike</p>
+                <span style="color: rgba(255,255,255,0.85); font-size: 0.95rem;">661-364-7730</span>
               </div>
-            </div>
-            <div class="contact-row">
-              <span class="cicon">&#9993;</span>
-              <div><a href="mailto:Mike.nisha05@sbcglobal.net">Mike.nisha05@sbcglobal.net</a></div>
-            </div>
+              <span style="margin-left: auto; font-size: 0.65rem; color: var(--gold-light); letter-spacing: 0.15em; font-family: 'Cinzel', serif;">CHAT</span>
+            </a>
           </div>
           <div class="rsvp-box reveal">
             <h3 class="rsvp-title">Confirm Your Attendance</h3>
@@ -2244,27 +2242,35 @@ LANDING PAGE
       </div>
     </section>
 
-    <footer
-      style="background: rgba(7,26,14,0.88); padding: 60px 20px; text-align: center; position: relative; overflow: hidden;">
-
-      <div class="mk-logo-text mini">MK</div>
-
-      <div class="gold-div" style="width:150px; margin: 0 auto 1rem;"><span></span>
-        <div class="dia"></div><span></span>
+    <footer style="position: relative; overflow: hidden; padding: 0;">
+      <!-- Footer background image with gradient -->
+      <div style="position: absolute; inset: 0; z-index: 0;">
+        <img src="footer.PNG" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,26,14,0.95) 0%, rgba(7,26,14,0.7) 30%, rgba(7,26,14,0.5) 60%, rgba(7,26,14,0.7) 100%);"></div>
       </div>
 
-      <p style="color: var(--text-light); font-family: 'Cinzel', serif; letter-spacing: 0.2em; font-size: 0.9rem;">
-        Mike &amp; Kanisha &nbsp;&bull;&nbsp; September 12, 2026
-      </p>
+      <div style="position: relative; z-index: 1; padding: 80px 20px 50px; text-align: center;">
+        <!-- MK Logo igual que el landing -->
+        <div style="margin-bottom: 1.5rem;">
+          <img src="inciales_mk.PNG" alt="MK" style="width: clamp(100px, 25vw, 140px); height: auto; display: block; margin: 0 auto; mix-blend-mode: screen; filter: invert(1) hue-rotate(180deg) brightness(1.15) drop-shadow(0 0 20px rgba(201,168,76,0.6));">
+        </div>
 
-      <p
-        style="margin-top: 0.8rem; font-size: 0.75rem; color: var(--gold-light); font-family: 'Lato', sans-serif; letter-spacing: 0.1em; text-transform: uppercase;">
-        Villa Punta del Cielo &nbsp;&bull;&nbsp; Bakersfield, CA
-      </p>
+        <div class="gold-div" style="width:150px; margin: 0 auto 1.5rem;"><span></span>
+          <div class="dia"></div><span></span>
+        </div>
 
-      <p style="margin-top: 3rem; font-size: 0.6rem; color: rgba(255,255,255,0.2); letter-spacing: 2px;">
-        Creado por teocalli
-      </p>
+        <p style="color: var(--text-light); font-family: 'Cinzel', serif; letter-spacing: 0.2em; font-size: 0.9rem;">
+          Mike &amp; Kanisha &nbsp;&bull;&nbsp; September 12, 2026
+        </p>
+
+        <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--gold-light); font-family: 'Lato', sans-serif; letter-spacing: 0.1em; text-transform: uppercase;">
+          Villa Punta del Cielo &nbsp;&bull;&nbsp; Bakersfield, CA
+        </p>
+
+        <p style="margin-top: 4rem; font-size: 0.6rem; color: rgba(255,255,255,0.2); letter-spacing: 2px;">
+          Creado por teocalli
+        </p>
+      </div>
     </footer>
 
   </div><!-- /main-content -->
@@ -2551,6 +2557,7 @@ function sendRSVP(){
    MUSIC PLAYER
 ======================================== */
 var musicOn = false;
+var ytPlayer = null;
 function toggleMusic(){
   var btn = document.getElementById('playBtn');
   if(!musicOn){
@@ -2558,9 +2565,11 @@ function toggleMusic(){
     if(!f){
       f = document.createElement('iframe');
       f.id='ytf';
-      f.src='https://www.youtube.com/embed/aL14tJ8O6No?autoplay=1&loop=1&playlist=aL14tJ8O6No&controls=0';
+      f.src='https://www.youtube.com/embed/aL14tJ8O6No?autoplay=1&loop=1&playlist=aL14tJ8O6No&controls=0&start=0&enablejsapi=1';
       f.style.cssText='position:fixed;bottom:-300px;left:-300px;width:1px;height:1px;opacity:0;pointer-events:none;';
-      f.allow='autoplay'; document.body.appendChild(f);
+      f.allow='autoplay; encrypted-media'; 
+      f.setAttribute('loading', 'eager');
+      document.body.appendChild(f);
     }
     btn.innerHTML='&#9646;&#9646;'; musicOn=true;
   } else {
