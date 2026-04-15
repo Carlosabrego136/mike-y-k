@@ -50,7 +50,7 @@ ESTILO DEL LOGO MK GIGANTE (HD)
       filter: drop-shadow(0 0 25px rgba(201, 168, 76, 0.6)) drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
 
       /* Animaciones de entrada y brillo constante */
-      animation: logoEntrance 2s ease-out, logoGlow 4s ease-in-out infinite;
+      animation: logoEntranceImg 2s ease-out, logoGlowReal 4s 2s ease-in-out infinite;
       user-select: none;
       text-align: center;
     }
@@ -94,6 +94,10 @@ ESTILO DEL LOGO MK GIGANTE (HD)
     body {
       font-family: 'Lato', sans-serif;
       background: var(--dark-green);
+      background-image: url('fondo.PNG');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
       color: var(--text-light);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
@@ -123,18 +127,24 @@ LANDING PAGE
       background: #020c05;
     }
 
-    /* Deep jungle ambient layers — HD */
+    /* Deep jungle ambient layers — HD with real photo */
     .land-bg {
       position: absolute;
       inset: 0;
       z-index: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(34, 110, 52, 0.65) 0%, transparent 68%),
-        radial-gradient(ellipse 55% 45% at 10% 85%, rgba(8, 50, 20, 0.75) 0%, transparent 60%),
-        radial-gradient(ellipse 55% 45% at 90% 85%, rgba(8, 50, 20, 0.75) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 30% at 50% 50%, rgba(20, 75, 35, 0.35) 0%, transparent 70%),
-        radial-gradient(ellipse 100% 100% at 50% 50%, #081c0c 0%, #020d05 100%);
+      background-image: url('fondo.PNG');
+      background-size: cover;
+      background-position: center center;
       animation: bgBreath 14s ease-in-out infinite;
+    }
+
+    /* dark overlay over the photo */
+    .land-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 50%, rgba(2, 12, 5, 0.35) 0%, rgba(2, 12, 5, 0.72) 100%);
     }
 
     @keyframes bgBreath {
@@ -467,6 +477,43 @@ LANDING PAGE
       animation: logoGlow 3.5s ease-in-out infinite;
     }
 
+    /* Real MK logo image — black bg removed via mix-blend-mode */
+    @keyframes logoEntranceImg {
+      from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+        filter: invert(1) hue-rotate(180deg) blur(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: invert(1) hue-rotate(180deg) blur(0px);
+      }
+    }
+
+    @keyframes logoGlowReal {
+
+      0%,
+      100% {
+        filter: invert(1) hue-rotate(180deg) brightness(1.1) drop-shadow(0 0 28px rgba(201, 168, 76, 0.6));
+      }
+
+      50% {
+        filter: invert(1) hue-rotate(180deg) brightness(1.2) saturate(1.3) drop-shadow(0 0 55px rgba(201, 168, 76, 0.95));
+      }
+    }
+
+    .mk-logo-img-real {
+      width: clamp(220px, 62vw, 380px);
+      height: auto;
+      display: block;
+      mix-blend-mode: screen;
+      animation: logoEntranceImg 2s ease-out, logoGlowReal 4s 2s ease-in-out infinite;
+      user-select: none;
+      margin-bottom: 0;
+    }
+
     @keyframes logoGlow {
 
       0%,
@@ -523,22 +570,23 @@ LANDING PAGE
     .enter-btn {
       margin-top: 2.4rem;
       display: inline-block;
-      padding: 14px 50px;
+      padding: 16px 55px;
       border: 1.5px solid var(--gold);
-      background: rgba(201, 168, 76, 0.08);
+      background: linear-gradient(135deg, rgba(139, 105, 20, 0.55), rgba(201, 168, 76, 0.45));
       color: var(--gold-light);
       font-family: 'Cinzel', serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.4em;
+      font-size: 0.78rem;
+      letter-spacing: 0.45em;
       text-transform: uppercase;
       cursor: pointer;
       position: relative;
       overflow: hidden;
       transition: all 0.45s ease;
       text-decoration: none;
-      border-radius: 3px;
+      border-radius: 30px;
       animation: fadeUp 2.3s ease both;
       z-index: 5;
+      box-shadow: 0 4px 24px rgba(201, 168, 76, 0.25), inset 0 1px 0 rgba(255, 232, 160, 0.25);
     }
 
     .enter-btn::before {
@@ -618,9 +666,21 @@ LANDING PAGE
 ============================== */
     #countdown-section {
       padding: 0;
-      background: #030d06;
+      background: rgba(3, 10, 5, 0.75);
       position: relative;
       overflow: hidden;
+    }
+
+    /* Jungle image for inner sections subtle bg */
+    .jungle-section-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image: url('fondo.PNG');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.18;
+      pointer-events: none;
     }
 
     /* Hero photo container */
@@ -886,7 +946,7 @@ LANDING PAGE
 ============================== */
     #gallery {
       padding: 70px 14px 50px;
-      background: linear-gradient(180deg, #071a0e 0%, #0d2a14 50%, #071a0e 100%);
+      background: rgba(7, 26, 14, 0.82);
     }
 
     .gallery-grid {
@@ -1067,7 +1127,7 @@ LANDING PAGE
     #dresscode {
       padding: 60px 20px 55px;
       text-align: center;
-      background: linear-gradient(180deg, #071a0e 0%, #0d2a14 100%);
+      background: rgba(7, 26, 14, 0.82);
       position: relative;
       overflow: hidden;
     }
@@ -1128,7 +1188,7 @@ LANDING PAGE
 ============================== */
     #story {
       padding: 70px 28px 55px;
-      background: radial-gradient(ellipse at center, rgba(15, 52, 25, 0.9) 0%, #071a0e 100%);
+      background: rgba(7, 26, 14, 0.78);
       text-align: center;
     }
 
@@ -1160,7 +1220,7 @@ LANDING PAGE
 ============================== */
     #timeline {
       padding: 70px 20px;
-      background: linear-gradient(180deg, #071a0e 0%, #0a2010 100%);
+      background: rgba(7, 26, 14, 0.82);
     }
 
     .tl-list {
@@ -1272,7 +1332,7 @@ LANDING PAGE
 ============================== */
     #extra-gallery {
       padding: 60px 14px;
-      background: linear-gradient(180deg, #0a2010 0%, #071a0e 100%);
+      background: rgba(7, 26, 14, 0.82);
     }
 
     /* ==============================
@@ -1280,7 +1340,7 @@ LANDING PAGE
 ============================== */
     #rsvp {
       padding: 70px 20px;
-      background: radial-gradient(ellipse at 50% 50%, rgba(20, 65, 30, 0.7) 0%, #071a0e 100%);
+      background: rgba(7, 26, 14, 0.78);
     }
 
     .rsvp-wrap {
@@ -1962,7 +2022,7 @@ LANDING PAGE
 
     <div class="land-content">
       <div class="mk-logo-wrap">
-        <div class="mk-logo-text-giant">MK</div>
+        <img src="inciales_mk.PNG" class="mk-logo-img-real" alt="MK" />
       </div>
 
       <div class="gold-div"><span></span>
@@ -2013,8 +2073,7 @@ LANDING PAGE
         </div>
       </div>
 
-      <div class="countdown-body"
-        style="background: linear-gradient(to bottom, transparent, var(--dark-green) 15%); padding-top: 40px;">
+      <div class="countdown-body" style="background: rgba(7,26,14,0.88); padding-top: 40px;">
         <div class="mk-logo-text secondary reveal" style="opacity: 0.4; font-size: 5rem;">MK</div>
         <div class="reveal">
           <p class="quote-text" style="font-style: italic; letter-spacing: 1px;">
@@ -2094,7 +2153,7 @@ LANDING PAGE
       </div>
     </section>
 
-    <section id="location" class="section" style="background: var(--dark-green); padding: 60px 0;">
+    <section id="location" class="section" style="background: rgba(7,26,14,0.82); padding: 60px 0;">
       <div class="sec-header reveal" style="padding: 0 20px;">
         <span class="sec-label" style="color: var(--gold-light); font-family: 'Cinzel'; letter-spacing: 4px; font-size: 0.7rem; text-transform: uppercase;">Venue</span>
         <h2 class="sec-title"
@@ -2343,7 +2402,7 @@ LANDING PAGE
     </section>
 
     <footer
-      style="background: var(--dark-green); padding: 60px 20px; text-align: center; position: relative; overflow: hidden;">
+      style="background: rgba(7,26,14,0.88); padding: 60px 20px; text-align: center; position: relative; overflow: hidden;">
 
       <div class="mk-logo-text mini">MK</div>
 
@@ -2389,7 +2448,7 @@ LANDING PAGE
       hue: Math.random()*18+38
     };
   }
-  for(var i=0;i<32;i++){ var p=mkPt(); p.y=Math.random()*H; pts.push(p); }
+  for(var i=0;i<45;i++){ var p=mkPt(); p.y=Math.random()*H; pts.push(p); }
   function frame(){
     ctx.clearRect(0,0,W,H);
     pts.forEach(function(p,i){
