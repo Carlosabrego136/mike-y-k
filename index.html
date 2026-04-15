@@ -509,9 +509,20 @@ LANDING PAGE
       height: auto;
       display: block;
       mix-blend-mode: screen;
-      animation: logoEntranceImg 2s ease-out, logoGlowReal 4s 2s ease-in-out infinite;
+      filter: invert(1) hue-rotate(180deg) brightness(1.15) drop-shadow(0 0 32px rgba(201, 168, 76, 0.8));
+      animation: logoEntranceImg 2s ease-out forwards, logoGlowReal 4s 2s ease-in-out infinite;
       user-select: none;
       margin-bottom: 0;
+    }
+
+    .mk-logo-canvas-real {
+      width: clamp(220px, 62vw, 380px);
+      height: auto;
+      display: block;
+      animation: logoEntranceImg 2s ease-out forwards, logoGlowReal 4s 2s ease-in-out infinite;
+      user-select: none;
+      margin-bottom: 0;
+      filter: drop-shadow(0 0 32px rgba(201, 168, 76, 0.8)) brightness(1.15);
     }
 
     @keyframes logoGlow {
@@ -2629,6 +2640,37 @@ function toggleMusic(){
     btn.innerHTML='&#9654;'; musicOn=false;
   }
 }
+
+/* ========================================
+   MK LOGO — remove white background via canvas
+======================================== */
+(function(){
+  var imgEl = document.querySelector('.mk-logo-img-real');
+  if(!imgEl) return;
+  function processLogo(){
+    try {
+      var canvas = document.createElement('canvas');
+      canvas.width = imgEl.naturalWidth || 800;
+      canvas.height = imgEl.naturalHeight || 800;
+      var ctx = canvas.getContext('2d');
+      ctx.drawImage(imgEl, 0, 0);
+      var d = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      var px = d.data;
+      for(var i=0;i<px.length;i+=4){
+        var r=px[i], g=px[i+1], b=px[i+2];
+        var lum = 0.299*r + 0.587*g + 0.114*b;
+        if(lum > 210){
+          px[i+3] = Math.max(0, Math.round((255-lum)*3.5));
+        }
+      }
+      ctx.putImageData(d, 0, 0);
+      canvas.className = 'mk-logo-canvas-real';
+      imgEl.parentNode.replaceChild(canvas, imgEl);
+    } catch(e) {}
+  }
+  if(imgEl.complete && imgEl.naturalWidth){ processLogo(); }
+  else { imgEl.addEventListener('load', processLogo); }
+})();
   </script>
 </body>
 
