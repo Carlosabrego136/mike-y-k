@@ -9,15 +9,60 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --gold: #c9a84c;
-  --gold-light: #f0d68a;
-  --gold-dark: #8b6914;
-  --gold-shine: #ffe8a0;
-  --dark-green: #071a0e;
-  --mid-green: #0d2a14;
-  --jungle: #1b4332;
-  --text-light: rgba(255,255,255,0.92);
-  --text-cream: #f5ead0;
+--gold: #c9a84c;
+--gold-light: #f0d68a;
+--gold-dark: #8b6914;
+--gold-shine: #ffe8a0;
+--dark-green: #071a0e;
+--mid-green: #0d2a14;
+--jungle: #1b4332;
+--text-light: rgba(255,255,255,0.92);
+--text-cream: #f5ead0;
+}
+
+/* ========================================
+ESTILO DEL LOGO MK GIGANTE (HD)
+======================================== */
+.mk-logo-text-giant {
+font-family: 'Cinzel', serif;
+font-weight: 700;
+/* Tamaño masivo adaptable */
+font-size: clamp(150px, 45vw, 320px);
+line-height: 0.7;
+/* Efecto entrelazado (letras juntas) */
+letter-spacing: -15px;
+margin-bottom: 20px;
+
+/* Degradado metálico de Oro Real */
+background: linear-gradient(
+135deg,
+#8b6914 0%,
+#f0d68a 30%,
+#ffffff 50%,
+#f0d68a 70%,
+#c9a84c 100%
+);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+/* Profundidad y Brillo */
+filter: drop-shadow(0 0 25px rgba(201,168,76,0.6))
+drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+
+/* Animaciones de entrada y brillo constante */
+animation: logoEntrance 2s ease-out, logoGlow 4s ease-in-out infinite;
+user-select: none;
+text-align: center;
+}
+
+@keyframes logoEntrance {
+from { opacity: 0; transform: scale(0.8) translateY(20px); filter: blur(10px); }
+to { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+}
+
+@keyframes logoGlow {
+0%, 100% { filter: drop-shadow(0 0 25px rgba(201,168,76,0.5)); }
+50% { filter: drop-shadow(0 0 50px rgba(201,168,76,0.9)); }
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1015,11 +1060,11 @@ footer p {
 
   <!-- Fireflies -->
   <div class="firefly-layer" id="ffLayer"></div>
-
+  
   <div class="land-content">
   
     <div class="mk-logo-wrap">
-      <div class="mk-logo-text">MK</div>
+      <div class="mk-logo-text-giant">MK</div>
     </div>
   
     <div class="gold-div"><span></span>
@@ -1332,7 +1377,7 @@ footer p {
     </p>
   
     <p style="margin-top: 3rem; font-size: 0.6rem; color: rgba(255,255,255,0.2); letter-spacing: 2px;">
-      Creado con Gemini
+      Creado por teocalli
     </p>
   </footer>
 
