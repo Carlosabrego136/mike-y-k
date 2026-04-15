@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#071a0e">
+<title>Mike &amp; Kanisha — Wedding Anniversary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #c9a84c;
+  --gold-light: #f0d68a;
+  --gold-dark: #8b6914;
+  --gold-shine: #ffe8a0;
+  --dark-green: #071a0e;
+  --mid-green: #0d2a14;
+  --jungle: #1b4332;
+  --text-light: rgba(255,255,255,0.92);
+  --text-cream: #f5ead0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--dark-green);
+  color: var(--text-light);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==============================
+   CANVAS PARTICLES (fixed layer)
+============================== */
+#particles {
+  position: fixed; inset: 0; z-index: 1; pointer-events: none;
+}
+
+/* ==============================
+   LANDING PAGE
+============================== */
+#landing {
+  position: relative; min-height: 100svh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  overflow: hidden; background: #040f07;
+}
+
+/* Deep jungle ambient layers */
+.land-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 0%, rgba(30,100,45,0.55) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 20% 90%, rgba(10,55,22,0.6) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 40% at 80% 90%, rgba(10,55,22,0.6) 0%, transparent 65%),
+    radial-gradient(ellipse 100% 100% at 50% 50%, #0b2010 0%, #040f07 100%);
+}
+
+/* Light rays from top */
+.light-rays {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 100%; height: 70%; z-index: 1; pointer-events: none;
+  background:
+    conic-gradient(from -8deg at 50% -5%,
+      transparent 0deg,
+      rgba(201,168,76,0.04) 3deg,
+      transparent 6deg,
+      transparent 14deg,
+      rgba(201,168,76,0.025) 17deg,
+      transparent 20deg,
+      transparent 30deg,
+      rgba(220,190,100,0.03) 33deg,
+      transparent 36deg
+    );
+  animation: rayPulse 8s ease-in-out infinite;
+}
+@keyframes rayPulse { 0%,100%{opacity:0.7} 50%{opacity:1.2} }
+
+/* SVG jungle leaves */
+.leaf-wrap { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; }
+
+.palm-L {
+  position: absolute; left: -6vw; top: 0; width: 58vw; height: 105%;
+  transform-origin: 10% 40%;
+  animation: swL 10s ease-in-out infinite;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.5));
+}
+.palm-R {
+  position: absolute; right: -6vw; top: 0; width: 58vw; height: 105%;
+  transform-origin: 90% 40%;
+  animation: swR 12s ease-in-out 1.5s infinite;
+  transform: scaleX(-1);
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.5));
+}
+.palm-BL {
+  position: absolute; left: -4vw; bottom: -4%; width: 46vw; height: 52%;
+  transform-origin: 6% 96%;
+  animation: swBL 9s ease-in-out 2.5s infinite;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.4));
+}
+.palm-BR {
+  position: absolute; right: -4vw; bottom: -4%; width: 46vw; height: 52%;
+  transform-origin: 94% 96%;
+  animation: swBR 11s ease-in-out 3.5s infinite;
+  transform: scaleX(-1);
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.4));
+}
+
+@keyframes swL  { 0%,100%{transform:rotate(0deg)} 40%{transform:rotate(2.2deg)} 70%{transform:rotate(-1.4deg)} }
+@keyframes swR  { 0%,100%{transform:scaleX(-1) rotate(0deg)} 40%{transform:scaleX(-1) rotate(2.2deg)} 70%{transform:scaleX(-1) rotate(-1.4deg)} }
+@keyframes swBL { 0%,100%{transform:rotate(0deg)} 45%{transform:rotate(1.8deg)} 75%{transform:rotate(-1.1deg)} }
+@keyframes swBR { 0%,100%{transform:scaleX(-1) rotate(0deg)} 45%{transform:scaleX(-1) rotate(1.8deg)} 75%{transform:scaleX(-1) rotate(-1.1deg)} }
+
+/* Fireflies */
+.firefly-layer { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+.ff {
+  position: absolute; border-radius: 50%;
+  background: radial-gradient(circle, #ffe566 0%, rgba(255,220,80,0.3) 60%, transparent 100%);
+  animation: ffFloat linear infinite;
+}
+@keyframes ffFloat {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  15%  { opacity: 1; }
+  50%  { transform: translateY(-30px) translateX(12px); opacity: 0.8; }
+  85%  { opacity: 0.4; }
+  100% { transform: translateY(-60px) translateX(-8px); opacity: 0; }
+}
+
+/* Landing content */
+.land-content {
+  position: relative; z-index: 10;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+/* BIG MK logo */
+.mk-logo-wrap {
+  position: relative; margin-bottom: 0.5rem;
+}
+.mk-logo {
+  width: clamp(220px, 60vw, 360px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 0 35px rgba(201,168,76,0.7)) drop-shadow(0 0 70px rgba(201,168,76,0.35));
+  animation: logoGlow 3.5s ease-in-out infinite;
+}
+@keyframes logoGlow {
+  0%,100% { filter: drop-shadow(0 0 28px rgba(201,168,76,0.55)) drop-shadow(0 0 55px rgba(201,168,76,0.25)); }
+  50%      { filter: drop-shadow(0 0 60px rgba(201,168,76,0.95)) drop-shadow(0 0 120px rgba(240,214,138,0.4)); }
+}
+
+.gold-div {
+  display: flex; align-items: center; gap: 10px;
+  width: 240px; margin: 0.7rem auto;
+}
+.gold-div span { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.gold-div .dia { width: 5px; height: 5px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+
+.tagline-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem; letter-spacing: 0.42em;
+  color: var(--gold-light); text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  animation: fadeUp 1.8s ease both;
+}
+.event-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  color: #fff; line-height: 1.1;
+  text-shadow: 0 0 60px rgba(201,168,76,0.5);
+  animation: fadeUp 2s ease both;
+}
+.enter-btn {
+  margin-top: 2.4rem;
+  display: inline-block;
+  padding: 14px 50px;
+  border: 1.5px solid var(--gold);
+  background: rgba(201,168,76,0.08);
+  color: var(--gold-light);
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem; letter-spacing: 0.4em;
+  text-transform: uppercase; cursor: pointer;
+  position: relative; overflow: hidden;
+  transition: all 0.45s ease;
+  text-decoration: none; border-radius: 3px;
+  animation: fadeUp 2.3s ease both; z-index: 5;
+}
+.enter-btn::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  transform: translateX(-102%); transition: transform 0.45s ease; z-index: -1;
+}
+.enter-btn:hover::before { transform: translateX(0); }
+.enter-btn:hover { color: #fff; border-color: var(--gold-shine); }
+
+.enter-btn .btn-sparkle {
+  display: inline-block; margin-left: 6px;
+  animation: spin 3s linear infinite; font-style: normal;
+}
+@keyframes spin { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(38px)} to{opacity:1;transform:translateY(0)} }
+
+/* ==============================
+   MAIN CONTENT
+============================== */
+#main-content { display: none; }
+#main-content.visible { display: block; }
+
+.section { position: relative; overflow: hidden; }
+
+/* Section ambient leaves on every section */
+.sec-leaf {
+  position: absolute; pointer-events: none; z-index: 0; opacity: 0.06;
+}
+
+/* ==============================
+   COUNTDOWN SECTION
+============================== */
+#countdown-section {
+  padding: 0;
+  background: #040f07;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero photo container */
+.hero-photo-wrap {
+  position: relative; width: 100%; overflow: hidden;
+}
+.hero-photo-img {
+  width: 100%; max-height: 75svh;
+  object-fit: cover; object-position: center top;
+  display: block;
+  filter: brightness(0.75) contrast(1.05) saturate(1.1);
+}
+
+/* Golden rain shimmer over photo */
+.hero-shimmer {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(201,168,76,0.06) 45%,
+    rgba(201,168,76,0.18) 80%,
+    rgba(10,30,15,0.92) 100%);
+}
+
+/* Jungle leaves overlay on photo */
+.hero-leaves {
+  position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+}
+.hero-leaf-L {
+  position: absolute; left: -5vw; top: -3%; width: 50vw; height: 100%;
+  transform-origin: 10% 40%;
+  animation: swL 10s ease-in-out infinite;
+  opacity: 0.75;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
+}
+.hero-leaf-R {
+  position: absolute; right: -5vw; top: -3%; width: 50vw; height: 100%;
+  transform-origin: 90% 40%;
+  animation: swR 12s ease-in-out 2s infinite;
+  transform: scaleX(-1);
+  opacity: 0.75;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
+}
+
+/* Names over photo */
+.hero-names-wrap {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-start;
+  padding-top: 6vw; z-index: 5; pointer-events: none;
+}
+.hero-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3rem, 10vw, 6rem);
+  color: var(--gold-light);
+  text-shadow: 0 2px 30px rgba(0,0,0,0.7), 0 0 60px rgba(201,168,76,0.5);
+  line-height: 1;
+  animation: fadeUp 1.2s ease both;
+  pointer-events: none;
+}
+
+/* Countdown info below photo */
+.countdown-body {
+  padding: 2.5rem 1.2rem 3rem;
+  text-align: center;
+  background: radial-gradient(ellipse at 50% 0%, rgba(25,70,35,0.7) 0%, transparent 65%), #071a0e;
+  position: relative; z-index: 2;
+}
+
+/* Tiny jungle leaves ambient */
+.countdown-body::before {
+  content: '';
+  position: absolute; top: -2px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.mk-small {
+  width: clamp(100px, 28vw, 160px);
+  height: auto; display: block; margin: 0 auto 1.5rem;
+  filter: drop-shadow(0 0 22px rgba(201,168,76,0.55));
+  animation: logoGlow 3.5s ease-in-out infinite;
+}
+
+.quote-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(1.5rem, 5.5vw, 2.3rem);
+  color: var(--gold-light); line-height: 1.5;
+  margin-bottom: 2rem; padding: 0 1.2rem;
+  text-shadow: 0 2px 20px rgba(201,168,76,0.25);
+}
+.date-banner {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.65rem, 2.5vw, 0.85rem);
+  letter-spacing: 0.38em; color: rgba(255,255,255,0.5);
+  text-transform: uppercase; margin-bottom: 2rem;
+}
+
+/* Countdown boxes */
+.cd-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 10px; margin: 0 auto 1.8rem; max-width: 480px;
+}
+.cd-box {
+  background: linear-gradient(160deg, rgba(15,50,25,0.8) 0%, rgba(8,28,14,0.9) 100%);
+  border: 1px solid rgba(201,168,76,0.22);
+  border-radius: 8px; padding: 18px 6px;
+  position: relative; overflow: hidden;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(201,168,76,0.1);
+}
+.cd-box::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+/* Golden rain inside box — tiny sparkle */
+.cd-box::after {
+  content: '✦';
+  position: absolute; right: 6px; top: 5px;
+  font-size: 0.45rem; color: rgba(201,168,76,0.35);
+  animation: sparkle 2.5s ease-in-out infinite;
+}
+@keyframes sparkle { 0%,100%{opacity:0.2;transform:scale(0.8)} 50%{opacity:0.7;transform:scale(1.2)} }
+.cd-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 7vw, 3.8rem);
+  font-weight: 300; color: var(--gold-light);
+  line-height: 1; display: block;
+  text-shadow: 0 0 30px rgba(201,168,76,0.4);
+}
+.cd-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.5rem; letter-spacing: 0.22em;
+  color: rgba(255,255,255,0.45); text-transform: uppercase;
+  display: block; margin-top: 5px;
+}
+
+.cal-btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 13px 34px;
+  background: rgba(201,168,76,0.1);
+  border: 1.5px solid var(--gold);
+  color: var(--gold-light);
+  font-family: 'Cinzel', serif; font-size: 0.68rem;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  cursor: pointer; border-radius: 30px;
+  transition: all 0.3s ease; text-decoration: none;
+}
+.cal-btn:hover {
+  background: rgba(201,168,76,0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201,168,76,0.2);
+}
+
+/* ==============================
+   GALLERY
+============================== */
+#gallery {
+  padding: 70px 14px 50px;
+  background: linear-gradient(180deg, #071a0e 0%, #0d2a14 50%, #071a0e 100%);
+}
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 8px; max-width: 680px; margin: 0 auto;
+}
+.gal-item {
+  position: relative; overflow: hidden; border-radius: 5px;
+  cursor: pointer; aspect-ratio: 1/1; background: #0a1e0d;
+}
+.gal-item img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  transition: transform 0.65s ease; display: block;
+}
+.gal-item::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(4,15,7,0.55) 100%);
+  pointer-events: none;
+}
+.gal-item:hover img { transform: scale(1.07); }
+.gal-item .gc {
+  position: absolute; top: 7px; right: 7px; z-index: 2;
+  width: 16px; height: 16px;
+  border-top: 1.5px solid var(--gold); border-right: 1.5px solid var(--gold);
+  opacity: 0.65;
+}
+.gal-item .gcbl {
+  position: absolute; bottom: 7px; left: 7px; z-index: 2;
+  width: 16px; height: 16px;
+  border-bottom: 1.5px solid var(--gold); border-left: 1.5px solid var(--gold);
+  opacity: 0.65;
+}
+
+/* ==============================
+   LOCATION
+============================== */
+#location {
+  padding: 70px 20px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(20,60,30,0.7) 0%, transparent 60%), #071a0e;
+}
+.loc-card {
+  max-width: 460px; margin: 0 auto;
+  background: rgba(10,28,15,0.75);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 10px; padding: 36px 24px;
+  text-align: center; backdrop-filter: blur(18px);
+  position: relative; overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.loc-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.venue-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(1.9rem, 6.5vw, 2.8rem);
+  color: var(--gold-light); margin-bottom: 1.2rem;
+}
+.loc-map-wrap {
+  width: 100%; overflow: hidden;
+  border-radius: 7px; margin: 1rem 0 1.6rem;
+  cursor: pointer; position: relative;
+  /* No border/frame — just the image */
+}
+.loc-map-wrap img {
+  width: 100%; display: block;
+  object-fit: cover; height: 240px;
+  transition: transform 0.5s ease;
+}
+.loc-map-wrap:hover img { transform: scale(1.04); }
+.loc-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.3s;
+}
+.loc-map-wrap:hover .loc-overlay { opacity: 1; background: rgba(0,0,0,0.3); }
+.loc-overlay span {
+  font-family: 'Cinzel', serif; font-size: 0.7rem;
+  letter-spacing: 0.3em; color: var(--gold-light);
+  background: rgba(0,0,0,0.6); padding: 8px 20px; border-radius: 20px;
+  border: 1px solid rgba(201,168,76,0.4);
+}
+.dotted { border: none; border-top: 1px dotted rgba(201,168,76,0.28); margin: 1rem 0; }
+.det-label {
+  font-family: 'Cinzel', serif; font-size: 0.66rem;
+  letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.25rem;
+}
+.det-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; color: rgba(255,255,255,0.85); line-height: 1.65;
+}
+
+/* ==============================
+   DRESS CODE
+============================== */
+#dresscode {
+  padding: 60px 20px 55px; text-align: center;
+  background: linear-gradient(180deg, #071a0e 0%, #0d2a14 100%);
+  position: relative; overflow: hidden;
+}
+.dc-ring {
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.15);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.8rem; position: relative;
+}
+.dc-ring::before {
+  content: '';
+  position: absolute; inset: 8px; border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.1);
+}
+.dc-icon { font-size: 3.2rem; }
+.dc-top { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.5em; color: rgba(255,255,255,0.35); text-transform: uppercase; margin-bottom: 0.4rem; }
+.dc-main { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 8vw, 3.4rem); font-weight: 300; font-style: italic; color: var(--gold-light); letter-spacing: 0.12em; }
+.dc-sub { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.3em; color: rgba(255,255,255,0.3); text-transform: uppercase; margin-top: 0.55rem; }
+
+/* ==============================
+   STORY QUOTE
+============================== */
+#story {
+  padding: 70px 28px 55px;
+  background: radial-gradient(ellipse at center, rgba(15,52,25,0.9) 0%, #071a0e 100%);
+  text-align: center;
+}
+.story-q { max-width: 580px; margin: 0 auto; }
+.big-q { font-family: 'Cormorant Garamond', serif; font-size: 6rem; line-height: 0.45; color: rgba(201,168,76,0.18); display: block; margin-bottom: 1rem; }
+.story-q p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.25rem, 3.8vw, 1.7rem);
+  font-style: italic; font-weight: 300;
+  color: var(--text-cream); line-height: 1.75;
+}
+
+/* ==============================
+   TIMELINE / ITINERARY
+============================== */
+#timeline {
+  padding: 70px 20px;
+  background: linear-gradient(180deg, #071a0e 0%, #0a2010 100%);
+}
+.tl-list { max-width: 400px; margin: 2.8rem auto 0; position: relative; }
+.tl-list::before {
+  content: '';
+  position: absolute; top: 16px; bottom: 16px; left: 32px;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(201,168,76,0.35), rgba(201,168,76,0.35), transparent);
+}
+.tl-item {
+  display: flex; align-items: flex-start; gap: 18px;
+  margin-bottom: 2.8rem;
+  opacity: 0; transform: translateX(-22px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.tl-item.tl-vis { opacity: 1; transform: translateX(0); }
+.tl-dot-col { width: 64px; flex-shrink: 0; text-align: center; }
+.tl-dot-ring {
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 2px solid var(--gold);
+  background: rgba(10,30,15,1);
+  margin: 0 auto;
+  position: relative; z-index: 2;
+  box-shadow: 0 0 16px rgba(201,168,76,0.5);
+  display: flex; align-items: center; justify-content: center;
+}
+.tl-dot-ring::after {
+  content: '';
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--gold);
+}
+.tl-time {
+  font-family: 'Cinzel', serif; font-size: 0.6rem;
+  letter-spacing: 0.12em; color: var(--gold);
+  display: block; margin-top: 6px;
+}
+.tl-body { padding-top: 1px; }
+.tl-icon-wrap {
+  width: 48px; height: 48px; border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.3);
+  background: rgba(15,50,25,0.8);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: 6px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3), 0 0 20px rgba(201,168,76,0.1);
+}
+.tl-event {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem; font-style: italic;
+  color: var(--text-cream);
+}
+.tl-ev-label {
+  font-family: 'Cinzel', serif; font-size: 0.58rem;
+  letter-spacing: 0.28em; color: rgba(201,168,76,0.6);
+  text-transform: uppercase; display: block; margin-top: 2px;
+}
+
+/* ==============================
+   EXTRA GALLERY
+============================== */
+#extra-gallery {
+  padding: 60px 14px;
+  background: linear-gradient(180deg, #0a2010 0%, #071a0e 100%);
+}
+
+/* ==============================
+   RSVP
+============================== */
+#rsvp {
+  padding: 70px 20px;
+  background: radial-gradient(ellipse at 50% 50%, rgba(20,65,30,0.7) 0%, #071a0e 100%);
+}
+.rsvp-wrap { max-width: 460px; margin: 0 auto; }
+.contact-list { display: flex; flex-direction: column; gap: 11px; margin: 2rem 0; }
+.contact-row {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px;
+  background: rgba(10,35,18,0.6);
+  border: 1px solid rgba(201,168,76,0.13);
+  border-radius: 7px;
+}
+.cicon { font-size: 1.1rem; color: var(--gold); flex-shrink: 0; }
+.contact-row a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.92rem; }
+.contact-row a:hover { color: var(--gold-light); }
+.clabel { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 2px; }
+
+.rsvp-box {
+  margin-top: 2.5rem;
+  background: rgba(10,35,18,0.6);
+  border: 1px solid rgba(201,168,76,0.18);
+  border-radius: 10px; padding: 28px 22px;
+  position: relative; overflow: hidden;
+}
+.rsvp-box::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.rsvp-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.85rem; font-style: italic;
+  color: var(--gold-light); text-align: center; margin-bottom: 1.5rem;
+}
+.fl { margin-bottom: 1.1rem; }
+.fl-lbl {
+  font-family: 'Cinzel', serif; font-size: 0.58rem;
+  letter-spacing: 0.28em; color: rgba(255,255,255,0.45);
+  text-transform: uppercase; display: block; margin-bottom: 5px;
+}
+.fl-inp {
+  width: 100%;
+  background: rgba(4,15,7,0.7);
+  border: 1px solid rgba(201,168,76,0.18);
+  border-radius: 5px; padding: 11px 14px;
+  color: rgba(255,255,255,0.9);
+  font-family: 'Lato', sans-serif; font-size: 0.88rem;
+  outline: none; transition: border-color 0.3s;
+  -webkit-appearance: none;
+}
+.fl-inp:focus { border-color: var(--gold); }
+.fl-inp::placeholder { color: rgba(255,255,255,0.22); }
+.radio-wrap { display: flex; gap: 14px; flex-wrap: wrap; }
+.radio-opt { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.radio-opt input { display: none; }
+.r-custom {
+  width: 17px; height: 17px;
+  border: 1.5px solid rgba(201,168,76,0.35);
+  border-radius: 50%; position: relative; flex-shrink: 0;
+  transition: border-color 0.3s;
+}
+.radio-opt input:checked + .r-custom { border-color: var(--gold); background: var(--gold-dark); }
+.radio-opt input:checked + .r-custom::after {
+  content: '';
+  position: absolute; top: 50%; left: 50%;
+  width: 7px; height: 7px; background: var(--gold-light);
+  border-radius: 50%; transform: translate(-50%, -50%);
+}
+.radio-opt span { font-size: 0.83rem; color: rgba(255,255,255,0.7); }
+.sel-field {
+  background: rgba(4,15,7,0.7);
+  border: 1px solid rgba(201,168,76,0.18);
+  color: rgba(255,255,255,0.9);
+  padding: 10px 13px; border-radius: 5px;
+  font-family: 'Lato', sans-serif; outline: none; cursor: pointer;
+  -webkit-appearance: none;
+}
+.sel-field option { background: #0d2a14; }
+.rsvp-submit {
+  width: 100%; margin-top: 1.5rem;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  border: none; border-radius: 5px;
+  color: #fff; font-family: 'Cinzel', serif;
+  font-size: 0.72rem; letter-spacing: 0.35em;
+  text-transform: uppercase; cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 24px rgba(201,168,76,0.2);
+}
+.rsvp-submit:hover {
+  background: linear-gradient(135deg, var(--gold), var(--gold-shine));
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(201,168,76,0.35);
+}
+.rsvp-ok { display: none; text-align: center; padding: 20px; font-family: 'Great Vibes', cursive; font-size: 1.85rem; color: var(--gold-light); }
+
+/* ==============================
+   SECTION HEADERS
+============================== */
+.sec-header { text-align: center; margin-bottom: 2.2rem; }
+.sec-label {
+  font-family: 'Cinzel', serif; font-size: 0.58rem;
+  letter-spacing: 0.5em; color: rgba(255,255,255,0.3);
+  text-transform: uppercase; display: block; margin-bottom: 0.45rem;
+}
+.sec-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.2rem, 7.5vw, 3.2rem);
+  color: var(--gold-light);
+  text-shadow: 0 0 40px rgba(201,168,76,0.3);
+}
+
+/* ==============================
+   MUSIC PLAYER
+============================== */
+#music-player {
+  position: fixed; bottom: 22px; right: 18px; z-index: 1000;
+  display: none; align-items: center; gap: 9px;
+  background: rgba(8,25,12,0.88);
+  border: 1px solid rgba(201,168,76,0.28);
+  border-radius: 30px; padding: 7px 15px 7px 10px;
+  backdrop-filter: blur(22px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.55);
+  transition: all 0.3s ease;
+}
+#music-player.show { display: flex; animation: fadeUp 0.6s ease both; }
+#music-player:hover { border-color: var(--gold); }
+.music-btn {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 0.95rem; flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.music-btn:hover { transform: scale(1.12); }
+.music-lbl {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.72rem; font-style: italic;
+  color: rgba(255,255,255,0.55); white-space: nowrap;
+}
+.music-note {
+  color: var(--gold); font-size: 0.78rem;
+  animation: notebb 1s ease-in-out infinite alternate;
+}
+@keyframes notebb { from{transform:translateY(0)} to{transform:translateY(-4px)} }
+
+/* ==============================
+   FOOTER
+============================== */
+footer {
+  padding: 48px 20px 36px; text-align: center;
+  background: #030a05;
+  border-top: 1px solid rgba(201,168,76,0.08);
+}
+.footer-logo {
+  width: 90px; margin: 0 auto 1rem;
+  opacity: 0.8; filter: drop-shadow(0 0 14px rgba(201,168,76,0.4));
+  display: block;
+}
+footer p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem; font-style: italic;
+  color: rgba(255,255,255,0.28);
+}
+
+/* ==============================
+   SCROLL REVEAL
+============================== */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.85s ease, transform 0.85s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ==============================
+   LIGHTBOX
+============================== */
+#lightbox {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.97);
+  align-items: center; justify-content: center; flex-direction: column;
+}
+#lightbox.open { display: flex; }
+#lightbox img {
+  max-width: 93vw; max-height: 82vh;
+  object-fit: contain; border-radius: 4px;
+  box-shadow: 0 0 60px rgba(201,168,76,0.18);
+  transition: opacity 0.28s ease;
+}
+#lightbox img.fading { opacity: 0; }
+#lb-close {
+  position: absolute; top: 18px; right: 22px;
+  background: none; border: none; color: var(--gold); font-size: 2rem; cursor: pointer; z-index: 2;
+}
+.lb-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(201,168,76,0.12); border: 1.5px solid var(--gold);
+  color: var(--gold-light); font-size: 1.5rem;
+  width: 42px; height: 42px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background 0.3s; z-index: 3;
+}
+.lb-nav:hover { background: rgba(201,168,76,0.35); }
+#lb-prev { left: 14px; }
+#lb-next { right: 14px; }
+.lb-count {
+  position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+  font-family: 'Cinzel', serif; font-size: 0.58rem;
+  letter-spacing: 0.28em; color: rgba(255,255,255,0.35);
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 380px) {
+  .cd-grid { grid-template-columns: repeat(2,1fr); }
+  .gallery-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- PARTICLES CANVAS -->
+<canvas id="particles"></canvas>
+
+<!-- MUSIC PLAYER -->
+<div id="music-player">
+  <button class="music-btn" id="playBtn" onclick="toggleMusic()">&#9654;</button>
+  <span class="music-note">&#9834;</span>
+  <span class="music-lbl">Our Song</span>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button id="lb-close" onclick="closeLB()">&#10005;</button>
+  <button class="lb-nav" id="lb-prev" onclick="lbNav(-1)">&#8249;</button>
+  <img id="lb-img" src="" alt="">
+  <button class="lb-nav" id="lb-next" onclick="lbNav(1)">&#8250;</button>
+  <div class="lb-count" id="lb-count"></div>
+</div>
+
+<!-- ==================
+     LANDING PAGE
+================== -->
+<section id="landing">
+  <div class="land-bg"></div>
+  <div class="light-rays"></div>
+
+  <!-- Jungle leaf SVGs -->
+  <div class="leaf-wrap">
+    <!-- LEFT -->
+    <svg class="palm-L" viewBox="0 0 480 950" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M60 950 C72 710 88 480 135 288 C158 200 185 130 232 78" stroke="#1a5c2a" stroke-width="6" fill="none"/>
+      <path d="M138 305 C215 222 345 205 480 220" stroke="#1d6b2e" stroke-width="4" fill="none"/>
+      <path d="M143 340 C225 262 358 255 480 272" stroke="#17562a" stroke-width="3.5" fill="none"/>
+      <path d="M158 415 C248 350 382 354 480 372" stroke="#1e6b30" stroke-width="3.5" fill="none"/>
+      <path d="M172 490 C268 428 398 432 480 452" stroke="#1a5c2a" stroke-width="3" fill="none"/>
+      <path d="M182 562 C282 504 415 510 480 532" stroke="#175828" stroke-width="3" fill="none"/>
+      <!-- Leaf fills -->
+      <path d="M218 238 C270 196 355 200 405 217 C355 233 270 236 218 238Z" fill="#1d6b2e" opacity="0.95"/>
+      <path d="M226 275 C282 234 370 238 415 256 C370 271 282 274 226 275Z" fill="#1a5c2a" opacity="0.9"/>
+      <path d="M240 348 C300 310 390 315 432 334 C390 349 300 352 240 348Z" fill="#1e6b30" opacity="0.88"/>
+      <path d="M252 422 C315 387 402 392 442 411 C402 425 315 428 252 422Z" fill="#17562a" opacity="0.84"/>
+      <path d="M262 494 C328 462 412 467 450 486 C412 500 328 503 262 494Z" fill="#1a5c2a" opacity="0.78"/>
+      <path d="M272 564 C340 534 420 540 458 558 C420 572 340 575 272 564Z" fill="#175828" opacity="0.72"/>
+      <!-- Secondary stem -->
+      <path d="M22 950 C35 695 56 452 102 268 C122 185 146 120 185 72" stroke="#145022" stroke-width="5" fill="none" opacity="0.65"/>
+      <path d="M106 290 C185 215 308 203 415 215" stroke="#145022" stroke-width="3" fill="none" opacity="0.65"/>
+      <path d="M188 218 C233 178 313 182 360 197 C313 212 233 214 188 218Z" fill="#145022" opacity="0.6"/>
+      <!-- Big leaf mass bottom -->
+      <path d="M80 360 C102 190 185 108 265 80 C242 125 200 182 168 258 C144 308 112 360 80 360Z" fill="#1a5428" opacity="0.5"/>
+      <!-- Extra deep leaf -->
+      <path d="M165 630 C240 590 350 596 420 618" stroke="#1a5c2a" stroke-width="3" fill="none" opacity="0.6"/>
+      <path d="M292 620 C348 592 432 596 468 614 C432 628 348 631 292 620Z" fill="#1a5c2a" opacity="0.55"/>
+    </svg>
+
+    <!-- RIGHT (mirror) -->
+    <svg class="palm-R" viewBox="0 0 480 950" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M60 950 C72 710 88 480 135 288 C158 200 185 130 232 78" stroke="#1a5c2a" stroke-width="6" fill="none"/>
+      <path d="M138 305 C215 222 345 205 480 220" stroke="#1d6b2e" stroke-width="4" fill="none"/>
+      <path d="M143 340 C225 262 358 255 480 272" stroke="#17562a" stroke-width="3.5" fill="none"/>
+      <path d="M158 415 C248 350 382 354 480 372" stroke="#1e6b30" stroke-width="3.5" fill="none"/>
+      <path d="M172 490 C268 428 398 432 480 452" stroke="#1a5c2a" stroke-width="3" fill="none"/>
+      <path d="M182 562 C282 504 415 510 480 532" stroke="#175828" stroke-width="3" fill="none"/>
+      <path d="M218 238 C270 196 355 200 405 217 C355 233 270 236 218 238Z" fill="#1d6b2e" opacity="0.95"/>
+      <path d="M226 275 C282 234 370 238 415 256 C370 271 282 274 226 275Z" fill="#1a5c2a" opacity="0.9"/>
+      <path d="M240 348 C300 310 390 315 432 334 C390 349 300 352 240 348Z" fill="#1e6b30" opacity="0.88"/>
+      <path d="M252 422 C315 387 402 392 442 411 C402 425 315 428 252 422Z" fill="#17562a" opacity="0.84"/>
+      <path d="M262 494 C328 462 412 467 450 486 C412 500 328 503 262 494Z" fill="#1a5c2a" opacity="0.78"/>
+      <path d="M272 564 C340 534 420 540 458 558 C420 572 340 575 272 564Z" fill="#175828" opacity="0.72"/>
+      <path d="M22 950 C35 695 56 452 102 268 C122 185 146 120 185 72" stroke="#145022" stroke-width="5" fill="none" opacity="0.65"/>
+      <path d="M106 290 C185 215 308 203 415 215" stroke="#145022" stroke-width="3" fill="none" opacity="0.65"/>
+      <path d="M188 218 C233 178 313 182 360 197 C313 212 233 214 188 218Z" fill="#145022" opacity="0.6"/>
+      <path d="M80 360 C102 190 185 108 265 80 C242 125 200 182 168 258 C144 308 112 360 80 360Z" fill="#1a5428" opacity="0.5"/>
+      <path d="M165 630 C240 590 350 596 420 618" stroke="#1a5c2a" stroke-width="3" fill="none" opacity="0.6"/>
+      <path d="M292 620 C348 592 432 596 468 614 C432 628 348 631 292 620Z" fill="#1a5c2a" opacity="0.55"/>
+    </svg>
+
+    <!-- BOTTOM LEFT -->
+    <svg class="palm-BL" viewBox="0 0 420 460" fill="none">
+      <path d="M28 460 C42 348 66 226 114 138" stroke="#1a5c2a" stroke-width="5" fill="none"/>
+      <path d="M117 142 C190 96 308 104 408 124" stroke="#1d6b2e" stroke-width="3.5" fill="none"/>
+      <path d="M120 170 C196 124 315 132 415 153" stroke="#1a5c2a" stroke-width="3" fill="none"/>
+      <path d="M168 148 C215 115 295 120 342 135 C295 148 215 151 168 148Z" fill="#1d6b2e" opacity="0.8"/>
+      <path d="M172 178 C218 146 298 150 345 166 C298 178 218 181 172 178Z" fill="#1a5c2a" opacity="0.75"/>
+    </svg>
+
+    <!-- BOTTOM RIGHT -->
+    <svg class="palm-BR" viewBox="0 0 420 460" fill="none">
+      <path d="M28 460 C42 348 66 226 114 138" stroke="#1a5c2a" stroke-width="5" fill="none"/>
+      <path d="M117 142 C190 96 308 104 408 124" stroke="#1d6b2e" stroke-width="3.5" fill="none"/>
+      <path d="M120 170 C196 124 315 132 415 153" stroke="#1a5c2a" stroke-width="3" fill="none"/>
+      <path d="M168 148 C215 115 295 120 342 135 C295 148 215 151 168 148Z" fill="#1d6b2e" opacity="0.8"/>
+      <path d="M172 178 C218 146 298 150 345 166 C298 178 218 181 172 178Z" fill="#1a5c2a" opacity="0.75"/>
+    </svg>
+  </div>
+
+  <!-- Fireflies -->
+  <div class="firefly-layer" id="ffLayer"></div>
+
+  <!-- Center content -->
+  <div class="land-content">
+    <div class="mk-logo-wrap">
+      <img src="imgs/LOGOVILLApng.png" alt="MK" class="mk-logo">
+    </div>
+    <div class="gold-div"><span></span><div class="dia"></div><span></span></div>
+    <span class="tagline-label">Welcome to Our</span>
+    <h1 class="event-title">Wedding Anniversary</h1>
+    <div class="gold-div" style="margin-top:1rem"><span></span><div class="dia"></div><span></span></div>
+    <a href="#" class="enter-btn" onclick="enterSite(event)">
+      E N T E R <em class="btn-sparkle">✦</em>
+    </a>
+  </div>
+</section>
+
+<!-- ==================
+     MAIN CONTENT
+================== -->
+<div id="main-content">
+
+  <!-- COUNTDOWN with photo 13 -->
+  <section id="countdown-section" class="section">
+    <!-- Hero photo 13 -->
+    <div class="hero-photo-wrap">
+      <img class="hero-photo-img" src="imgs/13.jpg" alt="Mike & Kanisha">
+      <div class="hero-shimmer"></div>
+      <!-- Jungle leaves over photo -->
+      <div class="hero-leaves">
+        <svg class="hero-leaf-L" viewBox="0 0 480 700" fill="none">
+          <path d="M40 700 C55 540 75 370 115 230 C132 165 155 105 188 60" stroke="#1a5c2a" stroke-width="5" fill="none"/>
+          <path d="M118 238 C188 175 308 165 420 178" stroke="#1d6b2e" stroke-width="3.5" fill="none"/>
+          <path d="M175 182 C218 148 295 151 340 164 C295 177 218 179 175 182Z" fill="#1d6b2e" opacity="0.92"/>
+          <path d="M182 215 C228 182 305 186 348 200 C305 213 228 215 182 215Z" fill="#1a5c2a" opacity="0.87"/>
+          <path d="M50 320 C72 190 148 118 222 88 C200 122 162 172 135 238 C116 284 88 320 50 320Z" fill="#1a5428" opacity="0.45"/>
+        </svg>
+        <svg class="hero-leaf-R" viewBox="0 0 480 700" fill="none">
+          <path d="M40 700 C55 540 75 370 115 230 C132 165 155 105 188 60" stroke="#1a5c2a" stroke-width="5" fill="none"/>
+          <path d="M118 238 C188 175 308 165 420 178" stroke="#1d6b2e" stroke-width="3.5" fill="none"/>
+          <path d="M175 182 C218 148 295 151 340 164 C295 177 218 179 175 182Z" fill="#1d6b2e" opacity="0.92"/>
+          <path d="M182 215 C228 182 305 186 348 200 C305 213 228 215 182 215Z" fill="#1a5c2a" opacity="0.87"/>
+          <path d="M50 320 C72 190 148 118 222 88 C200 122 162 172 135 238 C116 284 88 320 50 320Z" fill="#1a5428" opacity="0.45"/>
+        </svg>
+      </div>
+      <!-- Names over photo -->
+      <div class="hero-names-wrap">
+        <h2 class="hero-names reveal">Mike &amp; Kanisha</h2>
+      </div>
+    </div>
+
+    <!-- Countdown info block -->
+    <div class="countdown-body">
+      <!-- Small MK logo -->
+      <img src="imgs/LOGOVILLApng.png" alt="MK" class="mk-small reveal">
+
+      <div class="reveal">
+        <p class="quote-text">
+          &#8220;Still choosing each other, every day,<br>every moment&#8230;&#8221;
+        </p>
+        <p class="date-banner">&#8212; September 12, 2026 &#8212;</p>
+      </div>
+
+      <div class="cd-grid reveal">
+        <div class="cd-box"><span class="cd-num" id="cd-d">--</span><span class="cd-label">Days</span></div>
+        <div class="cd-box"><span class="cd-num" id="cd-h">--</span><span class="cd-label">Hours</span></div>
+        <div class="cd-box"><span class="cd-num" id="cd-m">--</span><span class="cd-label">Minutes</span></div>
+        <div class="cd-box"><span class="cd-num" id="cd-s">--</span><span class="cd-label">Seconds</span></div>
+      </div>
+
+      <a class="cal-btn reveal" href="#" onclick="addCal(event)">&#128197;&nbsp; Add to Calendar</a>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="section">
+    <div class="sec-header reveal">
+      <span class="sec-label">Our Journey</span>
+      <h2 class="sec-title">Moments Together</h2>
+      <div class="gold-div" style="width:190px;margin:1rem auto"><span></span><div class="dia"></div><span></span></div>
+    </div>
+    <div class="gallery-grid" id="galGrid">
+      <div class="gal-item reveal" style="transition-delay:.05s" data-idx="0"><img src="imgs/nisha_2.png" alt="" onclick="openLB(this,'galGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.1s"  data-idx="1"><img src="imgs/nisha_6.png" alt="" onclick="openLB(this,'galGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.15s" data-idx="2"><img src="imgs/nisha_7.png" alt="" onclick="openLB(this,'galGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.2s"  data-idx="3"><img src="imgs/nisha_9.png" alt="" onclick="openLB(this,'galGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.25s" data-idx="4"><img src="imgs/nisha_10.png" alt="" onclick="openLB(this,'galGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.3s"  data-idx="5"><img src="imgs/nisha_11.png" alt="" onclick="openLB(this,'galGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.35s" data-idx="6"><img src="imgs/nisha_12.png" alt="" onclick="openLB(this,'galGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.4s"  data-idx="7"><img src="imgs/nisha_1.png" alt="" onclick="openLB(this,'galGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.45s" data-idx="8"><img src="imgs/IMG_1377.jpg" alt="" onclick="openLB(this,'galGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.5s"  data-idx="9"><img src="imgs/IMG_1398.jpg" alt="" onclick="openLB(this,'galGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.55s" data-idx="10"><img src="imgs/IMG_1421.jpg" alt="" onclick="openLB(this,'galGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.6s"  data-idx="11"><img src="imgs/FullSizeRender2.jpg" alt="" onclick="openLB(this,'galGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="location" class="section">
+    <div class="sec-header reveal">
+      <span class="sec-label">Venue</span>
+      <h2 class="sec-title">The Celebration</h2>
+      <div class="gold-div" style="width:190px;margin:1rem auto"><span></span><div class="dia"></div><span></span></div>
+    </div>
+    <div class="loc-card reveal">
+      <h3 class="venue-name">Villa Punta del Cielo</h3>
+      <div class="loc-map-wrap" onclick="window.open('https://maps.google.com/?q=7837+E+White+Ln+Bakersfield+CA+93307','_blank')">
+        <img src="imgs/Locacion.jpg" alt="Venue">
+        <div class="loc-overlay"><span>&#128205; Get Directions</span></div>
+      </div>
+      <hr class="dotted">
+      <p class="det-label">Address</p>
+      <p class="det-val">7837 E White Ln<br>Bakersfield, CA 93307</p>
+      <hr class="dotted">
+      <a href="https://maps.google.com/?q=7837+E+White+Ln+Bakersfield+CA+93307" target="_blank" class="cal-btn" style="margin-top:1.2rem">&#128205;&nbsp; Get Directions</a>
+    </div>
+  </section>
+
+  <!-- DRESS CODE -->
+  <section id="dresscode" class="section">
+    <div class="sec-header reveal" style="margin-bottom:1.6rem">
+      <span class="sec-label">Attire</span>
+      <h2 class="sec-title">Dress Code</h2>
+    </div>
+    <div style="text-align:center" class="reveal">
+      <div class="dc-ring">
+        <span class="dc-icon">👔</span>
+      </div>
+      <p class="dc-top">Please wear</p>
+      <p class="dc-main">Formal</p>
+      <p class="dc-sub">Black tie encouraged</p>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section id="story" class="section">
+    <div class="story-q reveal">
+      <span class="big-q">&#8220;</span>
+      <p>A love story written in time&#8230;<br>celebrating the moments that made forever real.</p>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline" class="section">
+    <div class="sec-header reveal">
+      <span class="sec-label">Schedule</span>
+      <h2 class="sec-title">Evening Timeline</h2>
+      <div class="gold-div" style="width:190px;margin:1rem auto"><span></span><div class="dia"></div><span></span></div>
+    </div>
+    <div class="tl-list" id="tlList">
+      <div class="tl-item" data-d="0">
+        <div class="tl-dot-col">
+          <div class="tl-dot-ring"></div>
+          <span class="tl-time">5:30 PM</span>
+        </div>
+        <div class="tl-body">
+          <div class="tl-icon-wrap">🍹</div>
+          <p class="tl-event">Cocktail Hour</p>
+          <span class="tl-ev-label">Welcome Drinks</span>
+        </div>
+      </div>
+      <div class="tl-item" data-d="1">
+        <div class="tl-dot-col">
+          <div class="tl-dot-ring"></div>
+          <span class="tl-time">6:00 PM</span>
+        </div>
+        <div class="tl-body">
+          <div class="tl-icon-wrap">🍽️</div>
+          <p class="tl-event">Dinner</p>
+          <span class="tl-ev-label">Seated Dinner Service</span>
+        </div>
+      </div>
+      <div class="tl-item" data-d="2">
+        <div class="tl-dot-col">
+          <div class="tl-dot-ring"></div>
+          <span class="tl-time">7:30 PM</span>
+        </div>
+        <div class="tl-body">
+          <div class="tl-icon-wrap">💍</div>
+          <p class="tl-event">Formalities</p>
+          <span class="tl-ev-label">Toasts &amp; Ceremony</span>
+        </div>
+      </div>
+      <div class="tl-item" data-d="3">
+        <div class="tl-dot-col">
+          <div class="tl-dot-ring"></div>
+          <span class="tl-time">8:00 PM</span>
+        </div>
+        <div class="tl-body">
+          <div class="tl-icon-wrap">🎵</div>
+          <p class="tl-event">Dancing Begins</p>
+          <span class="tl-ev-label">Music &amp; Celebration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXTRA GALLERY -->
+  <section id="extra-gallery" class="section">
+    <div class="sec-header reveal">
+      <span class="sec-label">More Memories</span>
+      <h2 class="sec-title">Our Story</h2>
+      <div class="gold-div" style="width:190px;margin:1rem auto"><span></span><div class="dia"></div><span></span></div>
+    </div>
+    <div class="gallery-grid" id="extraGrid">
+      <div class="gal-item reveal" style="transition-delay:.05s" data-idx="0"><img src="imgs/02.jpg" alt="" onclick="openLB(this,'extraGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.1s"  data-idx="1"><img src="imgs/03.jpg" alt="" onclick="openLB(this,'extraGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.15s" data-idx="2"><img src="imgs/04.jpg" alt="" onclick="openLB(this,'extraGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.2s"  data-idx="3"><img src="imgs/05.jpg" alt="" onclick="openLB(this,'extraGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.25s" data-idx="4"><img src="imgs/06.jpg" alt="" onclick="openLB(this,'extraGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.3s"  data-idx="5"><img src="imgs/07.jpg" alt="" onclick="openLB(this,'extraGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.35s" data-idx="6"><img src="imgs/08.jpg" alt="" onclick="openLB(this,'extraGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.4s"  data-idx="7"><img src="imgs/09.jpg" alt="" onclick="openLB(this,'extraGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.45s" data-idx="8"><img src="imgs/15.jpg" alt="" onclick="openLB(this,'extraGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.5s"  data-idx="9"><img src="imgs/16.jpg" alt="" onclick="openLB(this,'extraGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.55s" data-idx="10"><img src="imgs/17.jpg" alt="" onclick="openLB(this,'extraGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.6s"  data-idx="11"><img src="imgs/IMG_1383.jpg" alt="" onclick="openLB(this,'extraGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.65s" data-idx="12"><img src="imgs/IMG_1402.jpg" alt="" onclick="openLB(this,'extraGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+      <div class="gal-item reveal" style="transition-delay:.7s"  data-idx="13"><img src="imgs/IMG_1378.jpg" alt="" onclick="openLB(this,'extraGrid')" loading="lazy"><div class="gc"></div><div class="gcbl"></div></div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp" class="section">
+    <div class="sec-header reveal">
+      <span class="sec-label">Join Us</span>
+      <h2 class="sec-title">RSVP</h2>
+      <div class="gold-div" style="width:190px;margin:1rem auto"><span></span><div class="dia"></div><span></span></div>
+    </div>
+    <div class="rsvp-wrap">
+      <div class="contact-list reveal">
+        <div class="contact-row">
+          <span class="cicon">📞</span>
+          <div>
+            <p class="clabel">Kanisha</p>
+            <a href="tel:6613647731">661-364-7731</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="cicon">📞</span>
+          <div>
+            <p class="clabel">Mike</p>
+            <a href="tel:6613647730">661-364-7730</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="cicon">✉️</span>
+          <div><a href="mailto:Mike.nisha05@sbcglobal.net">Mike.nisha05@sbcglobal.net</a></div>
+        </div>
+      </div>
+      <div class="rsvp-box reveal">
+        <h3 class="rsvp-title">Confirm Your Attendance</h3>
+        <div id="rsvp-fields">
+          <div class="fl"><label class="fl-lbl">Full Name</label><input class="fl-inp" type="text" id="rn" placeholder="Your full name"></div>
+          <div class="fl"><label class="fl-lbl">Phone Number</label><input class="fl-inp" type="tel" id="rp" placeholder="Your phone number"></div>
+          <div class="fl"><label class="fl-lbl">Email Address</label><input class="fl-inp" type="email" id="re" placeholder="Your email"></div>
+          <div class="fl">
+            <label class="fl-lbl">Will you attend?</label>
+            <div class="radio-wrap">
+              <label class="radio-opt"><input type="radio" name="att" value="yes" checked><div class="r-custom"></div><span>Yes, I'll be there ✨</span></label>
+              <label class="radio-opt"><input type="radio" name="att" value="no"><div class="r-custom"></div><span>Sorry, I can't</span></label>
+            </div>
+          </div>
+          <div class="fl" style="display:flex;align-items:center;gap:14px">
+            <label class="fl-lbl" style="margin:0">Guests</label>
+            <select class="sel-field" id="rg"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select>
+          </div>
+          <button class="rsvp-submit" onclick="sendRSVP()">RSVP Now</button>
+        </div>
+        <div class="rsvp-ok" id="rsvp-ok">Thank you! We can't wait to celebrate with you 🌿✨</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <img src="imgs/LOGOVILLApng.png" alt="MK" class="footer-logo">
+    <div class="gold-div" style="width:150px;margin:0 auto 1rem"><span></span><div class="dia"></div><span></span></div>
+    <p>Mike &amp; Kanisha &nbsp;&bull;&nbsp; September 12, 2026</p>
+    <p style="margin-top:.5rem;font-size:.75rem">Villa Punta del Cielo &nbsp;&bull;&nbsp; Bakersfield, CA</p>
+  </footer>
+
+</div><!-- /main-content -->
+
+<script>
+/* ========================================
+   GOLD PARTICLES + TOUCH SPARKLE
+======================================== */
+(function(){
+  var c = document.getElementById('particles');
+  var ctx = c.getContext('2d');
+  var pts = [], W, H;
+  function resize(){ W = c.width = window.innerWidth; H = c.height = window.innerHeight; }
+  resize(); window.addEventListener('resize', resize);
+  function mkPt(x, y, up){
+    return {
+      x: x !== undefined ? x : Math.random()*W,
+      y: y !== undefined ? y : Math.random()*(H*0.4),
+      vx: (Math.random()-0.5)*0.25,
+      vy: up ? -(Math.random()*0.8+0.2) : Math.random()*0.38+0.1,
+      sz: Math.random()*1.3+0.2,
+      op: Math.random()*0.38+0.08,
+      life: 0, maxL: Math.random()*280+120,
+      hue: Math.random()*18+38
+    };
+  }
+  for(var i=0;i<32;i++){ var p=mkPt(); p.y=Math.random()*H; pts.push(p); }
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(function(p,i){
+      p.life++; p.x += p.vx + Math.sin(p.life*0.013)*0.18; p.y += p.vy;
+      var f = p.life<40 ? p.life/40 : p.life>p.maxL-40 ? (p.maxL-p.life)/40 : 1;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(Math.PI/4);
+      ctx.beginPath(); ctx.ellipse(0,0,p.sz*0.4,p.sz*2,0,0,Math.PI*2);
+      ctx.fillStyle='hsla('+p.hue+',72%,74%,'+(p.op*f)+')'; ctx.fill(); ctx.restore();
+      if(p.life>=p.maxL || p.y>H+20) pts[i]=mkPt();
+    });
+    requestAnimationFrame(frame);
+  }
+  frame();
+  /* Touch / mouse move sparkle */
+  function spawnSpark(ex, ey){
+    for(var i=0;i<3;i++){
+      var sp=mkPt(ex+(Math.random()-0.5)*22, ey+(Math.random()-0.5)*22, true);
+      sp.sz=Math.random()*1.4+0.4; sp.op=0.55; sp.maxL=90; pts.push(sp);
+      if(pts.length>80) pts.shift();
+    }
+  }
+  document.addEventListener('touchmove', function(e){ var t=e.touches[0]; spawnSpark(t.clientX, t.clientY); });
+  document.addEventListener('mousemove', function(e){ if(Math.random()>0.85) spawnSpark(e.clientX, e.clientY); });
+})();
+
+/* ========================================
+   FIREFLIES on landing
+======================================== */
+(function(){
+  var layer = document.getElementById('ffLayer');
+  var positions = [
+    [15,20],[8,55],[25,75],[80,18],[92,60],[85,82],
+    [35,30],[60,12],[70,70],[45,88],[18,40],[50,50],
+    [30,65],[72,35],[10,90],[90,28],[55,82],[42,15]
+  ];
+  positions.forEach(function(p, i){
+    var el = document.createElement('div');
+    el.className = 'ff';
+    var sz = 3 + Math.random()*4;
+    el.style.cssText = [
+      'left:'+p[0]+'%','top:'+p[1]+'%',
+      'width:'+sz+'px','height:'+sz+'px',
+      'animation-duration:'+(4+Math.random()*5)+'s',
+      'animation-delay:'+(Math.random()*6)+'s'
+    ].join(';');
+    layer.appendChild(el);
+  });
+})();
+
+/* ========================================
+   ENTER SITE
+======================================== */
+function enterSite(e){
+  e.preventDefault();
+  var land = document.getElementById('landing');
+  land.style.transition = 'opacity 0.9s ease, transform 0.9s ease';
+  land.style.opacity = '0'; land.style.transform = 'scale(1.06)';
+  setTimeout(function(){
+    land.style.display = 'none';
+    document.getElementById('main-content').classList.add('visible');
+    setTimeout(function(){
+      document.getElementById('music-player').classList.add('show');
+    }, 700);
+    window.scrollTo(0,0);
+    initReveal(); initTL();
+  }, 900);
+}
+
+/* ========================================
+   COUNTDOWN
+======================================== */
+function cd(){
+  var t = new Date('2026-09-12T17:00:00'), n = new Date(), d = t - n;
+  if(d<=0){ ['d','h','m','s'].forEach(function(k){ document.getElementById('cd-'+k).textContent='0'; }); return; }
+  document.getElementById('cd-d').textContent = String(Math.floor(d/86400000)).padStart(2,'0');
+  document.getElementById('cd-h').textContent = String(Math.floor((d%86400000)/3600000)).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(Math.floor((d%3600000)/60000)).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(Math.floor((d%60000)/1000)).padStart(2,'0');
+}
+setInterval(cd, 1000); cd();
+
+/* ========================================
+   ADD TO CALENDAR
+======================================== */
+function addCal(e){
+  e.preventDefault();
+  window.open('https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mike%20%26%20Kanisha%20Wedding%20Anniversary&dates=20260912T170000/20260913T020000&location=7837%20E%20White%20Ln%2C%20Bakersfield%2C%20CA%2093307','_blank');
+}
+
+/* ========================================
+   SCROLL REVEAL
+======================================== */
+function initReveal(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+    });
+  }, {threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+}
+
+/* ========================================
+   TIMELINE REVEAL
+======================================== */
+function initTL(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        var delay = parseInt(en.target.getAttribute('data-d')||0);
+        setTimeout(function(){ en.target.classList.add('tl-vis'); }, delay*340);
+        obs.unobserve(en.target);
+      }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('.tl-item').forEach(function(el){ obs.observe(el); });
+}
+
+/* ========================================
+   LIGHTBOX
+======================================== */
+var lbImgs=[], lbIdx=0;
+function gatherImgs(gridId){
+  var imgs = document.querySelectorAll('#'+gridId+' .gal-item img');
+  var arr = []; imgs.forEach(function(img){ arr.push(img.src); }); return arr;
+}
+function openLB(imgEl, gridId){
+  lbImgs = gatherImgs(gridId);
+  lbIdx = parseInt(imgEl.closest('.gal-item').getAttribute('data-idx'))||0;
+  showLBImg(); document.getElementById('lightbox').classList.add('open');
+}
+function showLBImg(){
+  var img = document.getElementById('lb-img');
+  img.classList.add('fading');
+  setTimeout(function(){ img.src=lbImgs[lbIdx]; img.classList.remove('fading'); }, 200);
+  document.getElementById('lb-count').textContent = (lbIdx+1)+' / '+lbImgs.length;
+}
+function lbNav(dir){ lbIdx=(lbIdx+dir+lbImgs.length)%lbImgs.length; showLBImg(); }
+function closeLB(){ document.getElementById('lightbox').classList.remove('open'); }
+document.getElementById('lightbox').addEventListener('click', function(e){
+  if(e.target===this||e.target===document.getElementById('lb-img')) closeLB();
+});
+var lbTX=0;
+document.getElementById('lightbox').addEventListener('touchstart',function(e){lbTX=e.touches[0].clientX;});
+document.getElementById('lightbox').addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-lbTX; if(Math.abs(dx)>50) lbNav(dx<0?1:-1);});
+
+/* ========================================
+   RSVP
+======================================== */
+function sendRSVP(){
+  var name = document.getElementById('rn').value.trim();
+  if(!name){ document.getElementById('rn').focus(); return; }
+  document.getElementById('rsvp-fields').style.display='none';
+  document.getElementById('rsvp-ok').style.display='block';
+  var att = document.querySelector('input[name="att"]:checked').value;
+  var s = encodeURIComponent('RSVP - Mike & Kanisha Anniversary');
+  var b = encodeURIComponent('Name: '+name+'\nPhone: '+document.getElementById('rp').value+'\nEmail: '+document.getElementById('re').value+'\nAttending: '+att+'\nGuests: '+document.getElementById('rg').value);
+  window.open('mailto:Mike.nisha05@sbcglobal.net?subject='+s+'&body='+b,'_blank');
+}
+
+/* ========================================
+   MUSIC PLAYER
+======================================== */
+var musicOn = false;
+function toggleMusic(){
+  var btn = document.getElementById('playBtn');
+  if(!musicOn){
+    var f = document.getElementById('ytf');
+    if(!f){
+      f = document.createElement('iframe');
+      f.id='ytf';
+      f.src='https://www.youtube.com/embed/aL14tJ8O6No?autoplay=1&loop=1&playlist=aL14tJ8O6No&controls=0';
+      f.style.cssText='position:fixed;bottom:-300px;left:-300px;width:1px;height:1px;opacity:0;pointer-events:none;';
+      f.allow='autoplay'; document.body.appendChild(f);
+    }
+    btn.innerHTML='&#9646;&#9646;'; musicOn=true;
+  } else {
+    var ff=document.getElementById('ytf'); if(ff) ff.remove();
+    btn.innerHTML='&#9654;'; musicOn=false;
+  }
+}
+</script>
+</body>
+</html>
