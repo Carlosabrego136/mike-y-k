@@ -989,80 +989,55 @@ footer p {
   <div class="land-bg"></div>
   <div class="light-rays"></div>
 
-  <!-- Jungle leaf SVGs -->
   <div class="leaf-wrap">
-    <!-- LEFT -->
-    <svg class="palm-L" viewBox="0 0 480 950" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M60 950 C72 710 88 480 135 288 C158 200 185 130 232 78" stroke="#1a5c2a" stroke-width="6" fill="none"/>
-      <path d="M138 305 C215 222 345 205 480 220" stroke="#1d6b2e" stroke-width="4" fill="none"/>
-      <path d="M143 340 C225 262 358 255 480 272" stroke="#17562a" stroke-width="3.5" fill="none"/>
-      <path d="M158 415 C248 350 382 354 480 372" stroke="#1e6b30" stroke-width="3.5" fill="none"/>
-      <path d="M172 490 C268 428 398 432 480 452" stroke="#1a5c2a" stroke-width="3" fill="none"/>
-      <path d="M182 562 C282 504 415 510 480 532" stroke="#175828" stroke-width="3" fill="none"/>
-      <!-- Leaf fills -->
-      <path d="M218 238 C270 196 355 200 405 217 C355 233 270 236 218 238Z" fill="#1d6b2e" opacity="0.95"/>
-      <path d="M226 275 C282 234 370 238 415 256 C370 271 282 274 226 275Z" fill="#1a5c2a" opacity="0.9"/>
-      <path d="M240 348 C300 310 390 315 432 334 C390 349 300 352 240 348Z" fill="#1e6b30" opacity="0.88"/>
-      <path d="M252 422 C315 387 402 392 442 411 C402 425 315 428 252 422Z" fill="#17562a" opacity="0.84"/>
-      <path d="M262 494 C328 462 412 467 450 486 C412 500 328 503 262 494Z" fill="#1a5c2a" opacity="0.78"/>
-      <path d="M272 564 C340 534 420 540 458 558 C420 572 340 575 272 564Z" fill="#175828" opacity="0.72"/>
-      <!-- Secondary stem -->
-      <path d="M22 950 C35 695 56 452 102 268 C122 185 146 120 185 72" stroke="#145022" stroke-width="5" fill="none" opacity="0.65"/>
-      <path d="M106 290 C185 215 308 203 415 215" stroke="#145022" stroke-width="3" fill="none" opacity="0.65"/>
-      <path d="M188 218 C233 178 313 182 360 197 C313 212 233 214 188 218Z" fill="#145022" opacity="0.6"/>
-      <!-- Big leaf mass bottom -->
-      <path d="M80 360 C102 190 185 108 265 80 C242 125 200 182 168 258 C144 308 112 360 80 360Z" fill="#1a5428" opacity="0.5"/>
-      <!-- Extra deep leaf -->
-      <path d="M165 630 C240 590 350 596 420 618" stroke="#1a5c2a" stroke-width="3" fill="none" opacity="0.6"/>
-      <path d="M292 620 C348 592 432 596 468 614 C432 628 348 631 292 620Z" fill="#1a5c2a" opacity="0.55"/>
+    <div class="foreground-leaves"
+      style="position: absolute; width: 100%; height: 100%; z-index: 10; pointer-events: none; background: url('imgs/hojas_frente.png'); background-size: cover; opacity: 0.5; filter: blur(3px); transform: scale(1.1); animation: drift 20s infinite alternate ease-in-out;">
+    </div>
+  
+    <svg class="palm-L animate-sway" viewBox="0 0 480 950" fill="none" xmlns="http://www.w3.org/2000/svg"
+      style="filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));">
+      <path d="M60 950 C72 710 88 480 135 288 C158 200 185 130 232 78" stroke="#0a3d1a" stroke-width="8" fill="none" />
+      <path d="M138 305 C215 222 345 205 480 220" stroke="#1d6b2e" stroke-width="4" fill="none" />
+      <path d="M143 340 C225 262 358 255 480 272" stroke="#17562a" stroke-width="3.5" fill="none" />
+      <path d="M158 415 C248 350 382 354 480 372" stroke="#1e6b30" stroke-width="3.5" fill="none" />
+      <path d="M218 238 C270 196 355 200 405 217 C355 233 270 236 218 238Z" fill="#1d6b2e" opacity="0.95" />
+      <path d="M226 275 C282 234 370 238 415 256 C370 271 282 274 226 275Z" fill="#1a5c2a" opacity="0.9" />
+      <path d="M240 348 C300 310 390 315 432 334 C390 349 300 352 240 348Z" fill="#1e6b30" opacity="0.88" />
+      <path d="M252 422 C315 387 402 392 442 411 C402 425 315 428 252 422Z" fill="#17562a" opacity="0.84" />
     </svg>
-
-    <!-- RIGHT (mirror) -->
-    <svg class="palm-R" viewBox="0 0 480 950" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M60 950 C72 710 88 480 135 288 C158 200 185 130 232 78" stroke="#1a5c2a" stroke-width="6" fill="none"/>
-      <path d="M138 305 C215 222 345 205 480 220" stroke="#1d6b2e" stroke-width="4" fill="none"/>
-      <path d="M143 340 C225 262 358 255 480 272" stroke="#17562a" stroke-width="3.5" fill="none"/>
-      <path d="M158 415 C248 350 382 354 480 372" stroke="#1e6b30" stroke-width="3.5" fill="none"/>
-      <path d="M172 490 C268 428 398 432 480 452" stroke="#1a5c2a" stroke-width="3" fill="none"/>
-      <path d="M182 562 C282 504 415 510 480 532" stroke="#175828" stroke-width="3" fill="none"/>
-      <path d="M218 238 C270 196 355 200 405 217 C355 233 270 236 218 238Z" fill="#1d6b2e" opacity="0.95"/>
-      <path d="M226 275 C282 234 370 238 415 256 C370 271 282 274 226 275Z" fill="#1a5c2a" opacity="0.9"/>
-      <path d="M240 348 C300 310 390 315 432 334 C390 349 300 352 240 348Z" fill="#1e6b30" opacity="0.88"/>
-      <path d="M252 422 C315 387 402 392 442 411 C402 425 315 428 252 422Z" fill="#17562a" opacity="0.84"/>
-      <path d="M262 494 C328 462 412 467 450 486 C412 500 328 503 262 494Z" fill="#1a5c2a" opacity="0.78"/>
-      <path d="M272 564 C340 534 420 540 458 558 C420 572 340 575 272 564Z" fill="#175828" opacity="0.72"/>
-      <path d="M22 950 C35 695 56 452 102 268 C122 185 146 120 185 72" stroke="#145022" stroke-width="5" fill="none" opacity="0.65"/>
-      <path d="M106 290 C185 215 308 203 415 215" stroke="#145022" stroke-width="3" fill="none" opacity="0.65"/>
-      <path d="M188 218 C233 178 313 182 360 197 C313 212 233 214 188 218Z" fill="#145022" opacity="0.6"/>
-      <path d="M80 360 C102 190 185 108 265 80 C242 125 200 182 168 258 C144 308 112 360 80 360Z" fill="#1a5428" opacity="0.5"/>
-      <path d="M165 630 C240 590 350 596 420 618" stroke="#1a5c2a" stroke-width="3" fill="none" opacity="0.6"/>
-      <path d="M292 620 C348 592 432 596 468 614 C432 628 348 631 292 620Z" fill="#1a5c2a" opacity="0.55"/>
+  
+    <svg class="palm-R animate-sway-delayed" viewBox="0 0 480 950" fill="none" xmlns="http://www.w3.org/2000/svg"
+      style="filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));">
+      <path d="M60 950 C72 710 88 480 135 288 C158 200 185 130 232 78" stroke="#0a3d1a" stroke-width="8" fill="none" />
+      <path d="M138 305 C215 222 345 205 480 220" stroke="#1d6b2e" stroke-width="4" fill="none" />
+      <path d="M143 340 C225 262 358 255 480 272" stroke="#17562a" stroke-width="3.5" fill="none" />
+      <path d="M218 238 C270 196 355 200 405 217 C355 233 270 236 218 238Z" fill="#1d6b2e" opacity="0.95" />
+      <path d="M226 275 C282 234 370 238 415 256 C370 271 282 274 226 275Z" fill="#1a5c2a" opacity="0.9" />
     </svg>
-
-    <!-- BOTTOM LEFT -->
-    <svg class="palm-BL" viewBox="0 0 420 460" fill="none">
-      <path d="M28 460 C42 348 66 226 114 138" stroke="#1a5c2a" stroke-width="5" fill="none"/>
-      <path d="M117 142 C190 96 308 104 408 124" stroke="#1d6b2e" stroke-width="3.5" fill="none"/>
-      <path d="M120 170 C196 124 315 132 415 153" stroke="#1a5c2a" stroke-width="3" fill="none"/>
-      <path d="M168 148 C215 115 295 120 342 135 C295 148 215 151 168 148Z" fill="#1d6b2e" opacity="0.8"/>
-      <path d="M172 178 C218 146 298 150 345 166 C298 178 218 181 172 178Z" fill="#1a5c2a" opacity="0.75"/>
+  
+    <svg class="palm-BL animate-sway" viewBox="0 0 420 460" fill="none" style="opacity: 0.6; filter: brightness(0.5);">
+      <path d="M28 460 C42 348 66 226 114 138" stroke="#0a3d1a" stroke-width="5" fill="none" />
+      <path d="M168 148 C215 115 295 120 342 135 C295 148 215 151 168 148Z" fill="#1d6b2e" opacity="0.8" />
     </svg>
-
-    <!-- BOTTOM RIGHT -->
-    <svg class="palm-BR" viewBox="0 0 420 460" fill="none">
-      <path d="M28 460 C42 348 66 226 114 138" stroke="#1a5c2a" stroke-width="5" fill="none"/>
-      <path d="M117 142 C190 96 308 104 408 124" stroke="#1d6b2e" stroke-width="3.5" fill="none"/>
-      <path d="M120 170 C196 124 315 132 415 153" stroke="#1a5c2a" stroke-width="3" fill="none"/>
-      <path d="M168 148 C215 115 295 120 342 135 C295 148 215 151 168 148Z" fill="#1d6b2e" opacity="0.8"/>
-      <path d="M172 178 C218 146 298 150 345 166 C298 178 218 181 172 178Z" fill="#1a5c2a" opacity="0.75"/>
+  
+    <svg class="palm-BR animate-sway-delayed" viewBox="0 0 420 460" fill="none"
+      style="opacity: 0.6; filter: brightness(0.5);">
+      <path d="M28 460 C42 348 66 226 114 138" stroke="#0a3d1a" stroke-width="5" fill="none" />
+      <path d="M168 148 C215 115 295 120 342 135 C295 148 215 151 168 148Z" fill="#1d6b2e" opacity="0.8" />
     </svg>
+  
+    <div class="jungle-particles"
+      style="position: absolute; inset: 0; background: url('https://www.transparenttextures.com/patterns/stardust.png'); opacity: 0.15; pointer-events: none;">
+    </div>
+  
+    <div class="jungle-light-fx"
+      style="position: absolute; inset: 0; background: radial-gradient(circle at 50% 20%, rgba(201,168,76,0.15) 0%, transparent 75%); animation: pulseLight 6s infinite ease-in-out;">
+    </div>
   </div>
-
-  <!-- Fireflies -->
+  
   <div class="firefly-layer" id="ffLayer"></div>
   
   <div class="land-content">
-  
     <div class="mk-logo-wrap">
       <div class="mk-logo-text-giant">MK</div>
     </div>
@@ -1071,11 +1046,12 @@ footer p {
       <div class="dia"></div><span></span>
     </div>
   
-    <span class="tagline-label">Celebrating 20 Years of Love</span>
+    <span class="tagline-label" style="text-shadow: 0 0 15px rgba(0,0,0,1); letter-spacing: 5px;">Celebrating 20 Years of Love</span>
   
-    <h1 class="event-title">Mike & Kanisha</h1>
+    <h1 class="event-title" style="text-shadow: 0 5px 20px rgba(0,0,0,1); font-size: clamp(2.5rem, 10vw, 5rem);">Mike &
+      Kanisha</h1>
   
-    <div class="gold-div" style="margin-top:1rem"><span></span>
+    <div class="gold-div" style="margin-top:1.5rem"><span></span>
       <div class="dia"></div><span></span>
     </div>
   
@@ -1084,59 +1060,54 @@ footer p {
     </a>
   </div>
   </section>
-
-<div id="main-content">
-
-  <section id="countdown-section" class="section">
-    <div class="hero-photo-wrap">
-      <img class="hero-photo-img" src="imgs/13.jpg" alt="Mike & Kanisha">
-      <div class="hero-shimmer"></div>
-      <div class="hero-leaves">
-        <svg class="hero-leaf-L" viewBox="0 0 480 700" fill="none">
-          <path d="M40 700 C55 540 75 370 115 230 C132 165 155 105 188 60" stroke="#1a5c2a" stroke-width="5"
-            fill="none" />
-          <path d="M118 238 C188 175 308 165 420 178" stroke="#1d6b2e" stroke-width="3.5" fill="none" />
-          <path d="M175 182 C218 148 295 151 340 164 C295 177 218 179 175 182Z" fill="#1d6b2e" opacity="0.92" />
-          <path d="M182 215 C228 182 305 186 348 200 C305 213 228 215 182 215Z" fill="#1a5c2a" opacity="0.87" />
-          <path d="M50 320 C72 190 148 118 222 88 C200 122 162 172 135 238 C116 284 88 320 50 320Z" fill="#1a5428"
-            opacity="0.45" />
-        </svg>
-        <svg class="hero-leaf-R" viewBox="0 0 480 700" fill="none">
-          <path d="M40 700 C55 540 75 370 115 230 C132 165 155 105 188 60" stroke="#1a5c2a" stroke-width="5"
-            fill="none" />
-          <path d="M118 238 C188 175 308 165 420 178" stroke="#1d6b2e" stroke-width="3.5" fill="none" />
-          <path d="M175 182 C218 148 295 151 340 164 C295 177 218 179 175 182Z" fill="#1d6b2e" opacity="0.92" />
-          <path d="M182 215 C228 182 305 186 348 200 C305 213 228 215 182 215Z" fill="#1a5c2a" opacity="0.87" />
-          <path d="M50 320 C72 190 148 118 222 88 C200 122 162 172 135 238 C116 284 88 320 50 320Z" fill="#1a5428"
-            opacity="0.45" />
-        </svg>
+  
+  <div id="main-content">
+    <section id="countdown-section" class="section">
+      <div class="hero-photo-wrap" style="box-shadow: 0 20px 50px rgba(0,0,0,0.8);">
+        <img class="hero-photo-img" src="imgs/13.jpg" alt="Mike & Kanisha">
+        <div class="hero-shimmer"></div>
+  
+        <div class="hero-leaves">
+          <svg class="hero-leaf-L animate-float" viewBox="0 0 480 700" fill="none"
+            style="filter: drop-shadow(0 5px 15px rgba(0,0,0,0.6));">
+            <path d="M40 700 C55 540 75 370 115 230 C132 165 155 105 188 60" stroke="#0a3d1a" stroke-width="7"
+              fill="none" />
+            <path d="M118 238 C188 175 308 165 420 178" stroke="#1d6b2e" stroke-width="4" fill="none" />
+            <path d="M175 182 C218 148 295 151 340 164 C295 177 218 179 175 182Z" fill="#1d6b2e" opacity="0.95" />
+          </svg>
+          <svg class="hero-leaf-R animate-float-delayed" viewBox="0 0 480 700" fill="none"
+            style="filter: drop-shadow(0 5px 15px rgba(0,0,0,0.6));">
+            <path d="M40 700 C55 540 75 370 115 230 C132 165 155 105 188 60" stroke="#0a3d1a" stroke-width="7"
+              fill="none" />
+            <path d="M118 238 C188 175 308 165 420 178" stroke="#1d6b2e" stroke-width="4" fill="none" />
+            <path d="M175 182 C218 148 295 151 340 164 C295 177 218 179 175 182Z" fill="#1d6b2e" opacity="0.95" />
+          </svg>
+        </div>
+  
+        <div class="hero-names-wrap">
+          <h2 class="hero-names reveal">Mike &amp; Kanisha</h2>
+        </div>
       </div>
-      <div class="hero-names-wrap">
-        <h2 class="hero-names reveal">Mike &amp; Kanisha</h2>
+  
+      <div class="countdown-body"
+        style="background: linear-gradient(to bottom, transparent, var(--dark-green) 15%); padding-top: 40px;">
+        <div class="mk-logo-text secondary reveal" style="opacity: 0.4; font-size: 5rem;">MK</div>
+        <div class="reveal">
+          <p class="quote-text" style="font-style: italic; letter-spacing: 1px;">
+            &#8220;Still choosing each other, every day,<br>every moment&#8230;&#8221;
+          </p>
+          <p class="date-banner" style="color: var(--gold); font-weight: 600;">&#8212; September 12, 2026 &#8212;</p>
+        </div>
+  
+        <div class="cd-grid reveal">
+          <div class="cd-box"><span class="cd-num" id="cd-d">--</span><span class="cd-label">Days</span></div>
+          <div class="cd-box"><span class="cd-num" id="cd-h">--</span><span class="cd-label">Hours</span></div>
+          <div class="cd-box"><span class="cd-num" id="cd-m">--</span><span class="cd-label">Minutes</span></div>
+          <div class="cd-box"><span class="cd-num" id="cd-s">--</span><span class="cd-label">Seconds</span></div>
+        </div>
+        <a class="cal-btn reveal" href="#" onclick="addCal(event)">&#128197;&nbsp; Add to Calendar</a>
       </div>
-    </div>
-
-    <div class="countdown-body">
-
-      <div class="mk-logo-text secondary reveal">MK</div>
-
-      <div class="reveal">
-        <p class="quote-text">
-          &#8220;Still choosing each other, every day,<br>every moment&#8230;&#8221;
-        </p>
-        <p class="date-banner">&#8212; September 12, 2026 &#8212;</p>
-      </div>
-
-      <div class="cd-grid reveal">
-        <div class="cd-box"><span class="cd-num" id="cd-d">--</span><span class="cd-label">Days</span></div>
-        <div class="cd-box"><span class="cd-num" id="cd-h">--</span><span class="cd-label">Hours</span></div>
-        <div class="cd-box"><span class="cd-num" id="cd-m">--</span><span class="cd-label">Minutes</span></div>
-        <div class="cd-box"><span class="cd-num" id="cd-s">--</span><span class="cd-label">Seconds</span></div>
-      </div>
-
-      <a class="cal-btn reveal" href="#" onclick="addCal(event)">&#128197;&nbsp; Add to Calendar</a>
-    </div>
-  </section>
+    </section>
 
   <!-- GALLERY -->
   <section id="gallery" class="section">
