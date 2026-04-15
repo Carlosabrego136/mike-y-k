@@ -366,10 +366,14 @@ LANDING PAGE
       padding: 2rem 1.5rem;
     }
 
-    /* BIG MK logo - MAS GRANDE */
+    /* BIG MK logo - CENTRADO COMO EJEMPLO 3 */
     .mk-logo-wrap {
       position: relative;
       margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
     }
 
     .mk-logo {
@@ -408,23 +412,23 @@ LANDING PAGE
     }
 
     .mk-logo-img-real {
-      width: clamp(300px, 80vw, 520px);
+      width: clamp(180px, 55vw, 320px);
       height: auto;
       display: block;
       mix-blend-mode: screen;
       filter: invert(1) hue-rotate(180deg) brightness(1.15) drop-shadow(0 0 32px rgba(201, 168, 76, 0.8));
       animation: logoEntranceImg 2s ease-out forwards, logoGlowReal 4s 2s ease-in-out infinite;
       user-select: none;
-      margin-bottom: -15px;
+      margin: 0 auto -10px;
     }
 
     .mk-logo-canvas-real {
-      width: clamp(300px, 80vw, 520px);
+      width: clamp(180px, 55vw, 320px);
       height: auto;
       display: block;
       animation: logoEntranceImg 2s ease-out forwards, logoGlowReal 4s 2s ease-in-out infinite;
       user-select: none;
-      margin-bottom: -15px;
+      margin: 0 auto -10px;
       filter: drop-shadow(0 0 32px rgba(201, 168, 76, 0.8)) brightness(1.15);
     }
 
@@ -642,12 +646,12 @@ LANDING PAGE
     }
 
     .hero-photo-img {
-    width: 100%;
-    max-height: 90svh;
-    object-fit: cover;
-    object-position: center 60%;
-    display: block;
-    filter: brightness(0.75) contrast(1.05) saturate(1.1);
+      width: 100%;
+      max-height: 90svh;
+      object-fit: cover;
+      object-position: center 60%;
+      display: block;
+      filter: brightness(0.75) contrast(1.05) saturate(1.1);
     }
 
     /* Golden rain shimmer over photo */
@@ -693,7 +697,7 @@ LANDING PAGE
       filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
     }
 
-    /* Names over photo - SOBRE LA FOTO ARRIBA DEL TODO */
+    /* Names over photo - POSICIONADO EN LA PARTE SUPERIOR CON AMPLIO ESPACIO */
     .hero-names-wrap {
       position: absolute;
       top: 0;
@@ -703,21 +707,25 @@ LANDING PAGE
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      padding-top: clamp(12px, 4vw, 32px);
+      justify-content: flex-end;
+      padding-bottom: clamp(18px, 5vw, 40px);
+      padding-left: 12px;
+      padding-right: 12px;
       z-index: 5;
       pointer-events: none;
     }
 
     .hero-names {
       font-family: 'Great Vibes', cursive;
-      font-size: clamp(3.2rem, 12vw, 7rem);
+      font-size: clamp(3.4rem, 13vw, 7.5rem);
       color: var(--gold-light);
-      text-shadow: 0 2px 40px rgba(0, 0, 0, 0.85), 0 0 70px rgba(201, 168, 76, 0.55), 0 4px 12px rgba(0, 0, 0, 0.9);
+      text-shadow: 0 2px 40px rgba(0, 0, 0, 0.95), 0 0 70px rgba(201, 168, 76, 0.6), 0 4px 16px rgba(0, 0, 0, 1);
       line-height: 1;
       animation: fadeUp 1.2s ease both;
       pointer-events: none;
       margin-top: 0;
+      white-space: nowrap;
+      letter-spacing: 0.02em;
     }
 
     /* Countdown info below photo */
@@ -1118,9 +1126,9 @@ LANDING PAGE
 
     .dc-top {
       font-family: 'Cinzel', serif;
-      font-size: 0.58rem;
-      letter-spacing: 0.5em;
-      color: rgba(255, 255, 255, 0.35);
+      font-size: 0.85rem;
+      letter-spacing: 0.45em;
+      color: rgba(255, 255, 255, 0.75);
       text-transform: uppercase;
       margin-bottom: 0.4rem;
     }
@@ -1136,9 +1144,9 @@ LANDING PAGE
 
     .dc-sub {
       font-family: 'Cinzel', serif;
-      font-size: 0.58rem;
+      font-size: 0.82rem;
       letter-spacing: 0.3em;
-      color: rgba(255, 255, 255, 0.3);
+      color: rgba(255, 255, 255, 0.7);
       text-transform: uppercase;
       margin-top: 0.55rem;
     }
@@ -1874,15 +1882,17 @@ LANDING PAGE
   <div id="main-content">
     <section id="countdown-section" class="section">
       <div class="hero-photo-wrap" style="box-shadow: 0 20px 50px rgba(0,0,0,0.8);">
-        <img class="hero-photo-img" src="imgs/13.jpg" alt="Mike & Kanisha">
-        <div class="hero-shimmer"></div>
-  
-  
-  
-        <div class="hero-names-wrap" style="padding-top: 0px;">
-          <h2 class="hero-names reveal" style="margin-top: 8px;">Mike &amp; Kanisha</h2>
+        <img class="hero-photo-img" src="imgs/13.jpg" alt="Mike & Kanisha" style="object-position: center 20%;">
+        <div class="hero-shimmer"
+          style="background: linear-gradient(180deg, transparent 0%, transparent 50%, rgba(201,168,76,0.08) 75%, rgba(10,30,15,0.97) 100%);">
         </div>
+
+
+
+        <div class="hero-names-wrap">
+          <h2 class="hero-names reveal">Mike &amp; Kanisha</h2>
         </div>
+      </div>
 
       <div class="countdown-body" style="background: rgba(7,26,14,0.88); padding-top: 40px; text-align: center;">
         <div class="reveal">
@@ -2004,9 +2014,10 @@ LANDING PAGE
                   style="font-family: 'Cinzel', serif; color: var(--gold-light); letter-spacing: 3px; font-size: 1.2rem; margin-bottom: 15px; text-shadow: 2px 2px 10px rgba(0,0,0,0.8);">
                   Villa Punta del Cielo</h3>
 
-                <span style="background: rgba(13, 32, 18, 0.9); color: var(--gold-light); padding: 12px 25px; border-radius: 2px; border: 1px solid var(--gold); font-family: 'Cinzel'; font-size: 0.7rem; letter-spacing: 3px; backdrop-filter: blur(5px);">
-                OPEN MAPS
-              </span>
+                <span style="background: rgba(13, 32, 18, 0.88); color: var(--gold-light); padding: 10px 22px; border-radius: 30px; border: 1px solid var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1rem; letter-spacing: 2px; font-style: italic; backdrop-filter: blur(5px); display: flex; align-items: center; gap: 8px;">
+                  <span style="font-size: 0.75rem; font-family: 'Cinzel', serif; font-style: normal; letter-spacing: 3px; text-transform: uppercase; opacity: 0.85;">Toca aquí</span>
+                <span style="color: var(--gold); font-size: 0.9rem;">&#10022;</span>
+                </span>
               </div>
             </div>
           </div>
