@@ -304,34 +304,64 @@
   .cal-btn:hover { background: rgba(201,168,76,0.3); transform: translateY(-2px); }
 
   /* =========================================
-     COUPLE PHOTO - BIG HERO
+  COUPLE PHOTO - BIG HERO
   ========================================= */
   #couple-hero {
-    position: relative;
-    min-height: 70vh;
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden;
+  position: relative;
+  min-height: 80vh; /* Un poco más alto para mayor impacto visual */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(circle, rgba(26,58,32,0.3) 0%, transparent 70%);
   }
+  
   .couple-hero-img {
-    width: 100%; max-width: 500px;
-    border-radius: 4px;
-    box-shadow: 0 20px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,168,76,0.2);
-    position: relative; z-index: 3;
-    transform: perspective(1000px) rotateY(-2deg);
-    transition: transform 0.6s ease;
+  width: 90%;
+  max-width: 550px;
+  border-radius: 12px; /* Bordes más redondeados y elegantes */
+  /* Sombra profunda y borde dorado fino */
+  box-shadow:
+  0 30px 100px rgba(0,0,0,0.8),
+  0 0 0 1px rgba(201,168,76,0.3);
+  position: relative;
+  z-index: 3;
+  /* Efecto inicial de perspectiva */
+  transform: perspective(1200px) rotateY(-5deg) scale(0.95);
+  transition: all 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  object-fit: cover;
+  filter: brightness(1.05) contrast(1.05);
   }
-  .couple-hero-img:hover { transform: perspective(1000px) rotateY(0deg) scale(1.02); }
+  
+  /* Animación cuando entra en pantalla (asociada a tu clase .reveal) */
+  .couple-hero-img.visible {
+  transform: perspective(1200px) rotateY(0deg) scale(1);
+  }
+  
+  .couple-hero-img:hover {
+  transform: perspective(1200px) rotateY(2deg) scale(1.03);
+  box-shadow: 0 40px 120px rgba(0,0,0,0.9), 0 0 20px rgba(201,168,76,0.2);
+  }
+  
   .couple-overlay-quote {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    padding: 40px 30px 30px;
-    background: linear-gradient(0deg, rgba(7,26,14,0.95) 0%, transparent 100%);
-    text-align: center; z-index: 4;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  padding: 60px 30px 40px;
+  /* Degradado más suave para la frase */
+  background: linear-gradient(0deg, rgba(7,26,14,0.9) 20%, transparent 100%);
+  text-align: center;
+  z-index: 4;
   }
+  
   .couple-overlay-quote p {
-    font-family: 'Great Vibes', cursive;
-    font-size: clamp(1.4rem, 4.5vw, 2rem);
-    color: var(--gold-light);
-    text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(1.6rem, 5vw, 2.5rem);
+  color: var(--gold-light);
+  text-shadow: 2px 2px 15px rgba(0,0,0,0.9);
+  letter-spacing: 1px;
+  opacity: 0.95;
   }
 
   /* =========================================
