@@ -1117,23 +1117,48 @@ footer p {
   </section>
 
   <!-- LOCATION -->
-  <section id="location" class="section">
+  <section id="location" class="section" style="background: var(--dark-green); padding: 80px 20px;">
     <div class="sec-header reveal">
-      <span class="sec-label">Venue</span>
-      <h2 class="sec-title">The Celebration</h2>
-      <div class="gold-div" style="width:190px;margin:1rem auto"><span></span><div class="dia"></div><span></span></div>
-    </div>
-    <div class="loc-card reveal">
-      <h3 class="venue-name">Villa Punta del Cielo</h3>
-      <div class="loc-map-wrap" onclick="window.open('https://maps.google.com/?q=7837+E+White+Ln+Bakersfield+CA+93307','_blank')">
-        <img src="imgs/Locacion.jpg" alt="Venue">
-        <div class="loc-overlay"><span>&#128205; Get Directions</span></div>
+      <span class="sec-label" style="color: var(--gold-light); font-family: 'Cinzel'; letter-spacing: 4px; font-size: 0.7rem; text-transform: uppercase;">Venue</span>
+      <h2 class="sec-title"
+        style="font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: #fff; margin-top: 0.5rem;">The Celebration
+      </h2>
+      <div class="gold-div" style="width:190px; margin: 1rem auto; display: flex; align-items: center; gap: 10px;">
+        <span style="flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent);"></span>
+        <div class="dia" style="width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg);"></div>
+        <span style="flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent);"></span>
       </div>
-      <hr class="dotted">
-      <p class="det-label">Address</p>
-      <p class="det-val">7837 E White Ln<br>Bakersfield, CA 93307</p>
-      <hr class="dotted">
-      <a href="https://maps.google.com/?q=7837+E+White+Ln+Bakersfield+CA+93307" target="_blank" class="cal-btn" style="margin-top:1.2rem">&#128205;&nbsp; Get Directions</a>
+    </div>
+  
+    <div class="loc-card reveal"
+      style="max-width: 500px; margin: 2rem auto; background: rgba(13, 42, 20, 0.4); border: 1px solid rgba(201, 168, 76, 0.2); border-radius: 15px; overflow: hidden; backdrop-filter: blur(10px);">
+      <h3 class="venue-name"
+        style="font-family: 'Cinzel', serif; color: var(--gold-light); padding: 20px; text-align: center; letter-spacing: 2px;">
+        Villa Punta del Cielo</h3>
+  
+      <div class="loc-map-wrap" onclick="window.open('https://maps.google.com/?q=7837+E+White+Ln+Bakersfield+CA+93307')"
+        style="position: relative; cursor: pointer; line-height: 0; overflow: hidden;">
+        <img src="imgs/Locacion.jpg" alt="Venue" style="width: 100%; height: auto; display: block; filter: brightness(0.9) contrast(1.1);">
+        <div class="loc-overlay"
+          style="position: absolute; inset: 0; background: rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; transition: background 0.3s;">
+          <span style="background: rgba(13, 32, 18, 0.8); color: var(--gold-light); padding: 10px 20px; border-radius: 30px; border: 1px solid var(--gold); font-family: 'Cinzel'; font-size: 0.7rem; letter-spacing: 2px;">📍 Get Directions</span>
+        </div>
+      </div>
+  
+      <div style="padding: 25px; text-align: center;">
+        <hr style="border: none; border-top: 1px dotted rgba(201, 168, 76, 0.3); margin: 0 0 15px 0;">
+        <p class="det-label"
+          style="font-family: 'Cinzel'; font-size: 0.6rem; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 5px;">
+          Address</p>
+        <p class="det-val" style="font-family: 'Lato'; color: var(--text-light); line-height: 1.6;">7837 E White Ln<br>Bakersfield, CA 93307
+        </p>
+        <hr style="border: none; border-top: 1px dotted rgba(201, 168, 76, 0.3); margin: 15px 0;">
+  
+        <a href="https://maps.google.com/?q=7837+E+White+Ln+Bakersfield+CA+93307" target="_blank" class="cal-btn"
+          style="display: inline-block; margin-top: 0.5rem; padding: 12px 30px; border: 1px solid var(--gold); color: var(--gold-light); text-decoration: none; font-family: 'Cinzel'; font-size: 0.7rem; letter-spacing: 2px; border-radius: 4px; transition: all 0.3s;">
+          📍 Get Directions
+        </a>
+      </div>
     </div>
   </section>
 
