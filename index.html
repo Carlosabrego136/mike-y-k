@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#071a0e">
-  <title>Mike &amp; Kanisha — Wedding Anniversary</title>
+  <title>Michael &amp; Kanisha — Wedding Anniversary</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Lato:wght@300;400&display=swap"
@@ -985,115 +985,122 @@ LANDING PAGE
     LOCATION - MEJORADO
     ============================== */
     #location {
-    padding: 70px 20px;
-    position: relative;
+      padding: 70px 20px;
+      position: relative;
     }
-    
+
     .loc-card {
-    max-width: 460px;
-    margin: 0 auto;
-    background: rgba(10, 28, 15, 0.75);
-    border: 1px solid rgba(201, 168, 76, 0.2);
-    border-radius: 10px;
-    padding: 36px 24px;
-    text-align: center;
-    backdrop-filter: blur(18px);
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      max-width: 460px;
+      margin: 0 auto;
+      background: rgba(10, 28, 15, 0.75);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 10px;
+      padding: 36px 24px;
+      text-align: center;
+      backdrop-filter: blur(18px);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     }
-    
+
     .loc-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
-    
+
     .venue-name {
-    font-family: 'Great Vibes', cursive;
-    font-size: clamp(1.9rem, 6.5vw, 2.8rem);
-    color: var(--gold-light);
-    margin-bottom: 1.2rem;
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(1.9rem, 6.5vw, 2.8rem);
+      color: var(--gold-light);
+      margin-bottom: 1.2rem;
     }
-    
+
     .loc-map-wrap {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 7px;
-    margin: 1rem 0 1.6rem;
-    cursor: pointer;
-    position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 7px;
+      margin: 1rem 0 1.6rem;
+      cursor: pointer;
+      position: relative;
     }
-    
+
     .loc-map-wrap img {
-    width: 100%;
-    display: block;
-    object-fit: cover;
-    height: 240px;
-    transition: transform 0.5s ease;
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      height: 240px;
+      transition: transform 0.5s ease;
     }
-    
+
     .loc-map-wrap:hover img {
-    transform: scale(1.04);
+      transform: scale(1.04);
     }
-    
+
     .loc-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.18);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 1;
-    transition: opacity 0.3s;
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+      transition: opacity 0.3s;
     }
-    
+
     .loc-map-wrap:hover .loc-overlay {
-    background: rgba(0, 0, 0, 0.38);
+      background: rgba(0, 0, 0, 0.38);
     }
-    
+
     .loc-overlay span {
-    font-family: 'Cinzel', serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
-    color: var(--gold-light);
-    background: rgba(0, 0, 0, 0.65);
-    padding: 8px 20px;
-    border-radius: 20px;
-    border: 1px solid rgba(201, 168, 76, 0.6);
-    box-shadow: 0 0 12px rgba(201, 168, 76, 0.3);
-    animation: tapPulse 2.5s ease-in-out infinite;
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      color: var(--gold-light);
+      background: rgba(0, 0, 0, 0.65);
+      padding: 8px 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(201, 168, 76, 0.6);
+      box-shadow: 0 0 12px rgba(201, 168, 76, 0.3);
+      animation: tapPulse 2.5s ease-in-out infinite;
     }
-    
+
     @keyframes tapPulse {
-    0%, 100% { box-shadow: 0 0 10px rgba(201, 168, 76, 0.3); }
-    50% { box-shadow: 0 0 22px rgba(201, 168, 76, 0.7); }
+
+      0%,
+      100% {
+        box-shadow: 0 0 10px rgba(201, 168, 76, 0.3);
+      }
+
+      50% {
+        box-shadow: 0 0 22px rgba(201, 168, 76, 0.7);
+      }
     }
-    
+
     .dotted {
-    border: none;
-    border-top: 1px dotted rgba(201, 168, 76, 0.28);
-    margin: 1rem 0;
+      border: none;
+      border-top: 1px dotted rgba(201, 168, 76, 0.28);
+      margin: 1rem 0;
     }
-    
+
     .det-label {
-    font-family: 'Cinzel', serif;
-    font-size: 0.66rem;
-    letter-spacing: 0.3em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 0.25rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.66rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
     }
-    
+
     .det-val {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 1.65;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.65;
     }
 
     /* ==============================
@@ -1871,7 +1878,8 @@ LANDING PAGE
 
       <span class="tagline-label" style="text-shadow: 0 0 15px rgba(0,0,0,1); letter-spacing: 5px;">Celebrating 20 Years of Love</span>
 
-      <h1 class="event-title" style="text-shadow: 0 5px 20px rgba(0,0,0,1); font-size: clamp(2.5rem, 10vw, 5rem);">Mike
+      <h1 class="event-title" style="text-shadow: 0 5px 20px rgba(0,0,0,1); font-size: clamp(2.5rem, 10vw, 5rem);">
+        Michael
         &
         Kanisha</h1>
 
@@ -1888,7 +1896,7 @@ LANDING PAGE
   <div id="main-content">
     <section id="countdown-section" class="section">
       <div class="hero-photo-wrap" style="box-shadow: 0 20px 50px rgba(0,0,0,0.8);">
-        <img class="hero-photo-img" src="imgs/13.jpg" alt="Mike & Kanisha" style="object-position: center 20%;">
+        <img class="hero-photo-img" src="imgs/13.jpg" alt="Michael & Kanisha" style="object-position: center 20%;">
         <div class="hero-shimmer"
           style="background: linear-gradient(180deg, transparent 0%, transparent 50%, rgba(201,168,76,0.08) 75%, rgba(10,30,15,0.97) 100%);">
         </div>
@@ -1896,7 +1904,7 @@ LANDING PAGE
 
 
         <div class="hero-names-wrap">
-          <h2 class="hero-names reveal">Mike &amp; Kanisha</h2>
+          <h2 class="hero-names reveal">Michael &amp; Kanisha</h2>
         </div>
       </div>
 
@@ -1996,8 +2004,8 @@ LANDING PAGE
               <div class="gcbl"></div>
             </div>
           </div>
-          </div>
-          </section>
+        </div>
+      </section>
 
       <!-- LOCATION - CON FONDO 2 MEJORADO -->
       <section id="location" class="section">
@@ -2200,7 +2208,7 @@ LANDING PAGE
                 <div id="gw-fields">
                   <p
                     style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(255,255,255,0.55);letter-spacing:0.08em;margin-bottom:1.5rem;font-style:italic;">
-                    Leave a message for Mike &amp; Kanisha</p>
+                    Leave a message for Michael &amp; Kanisha</p>
                   <input id="gw-name" type="text" placeholder="Your name" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(201,168,76,0.28);border-radius:6px;padding:12px 16px;color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.05rem;margin-bottom:12px;outline:none;letter-spacing:0.05em;">
                   <textarea id="gw-msg" rows="4" placeholder="Write your wishes here..." style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(201,168,76,0.28);border-radius:6px;padding:12px 16px;color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.05rem;resize:none;outline:none;letter-spacing:0.05em;margin-bottom:20px;"></textarea>
                   <button onclick="sendGoodWishes()" style="display:inline-block;padding:14px 40px;border:1.5px solid var(--gold);background:rgba(201,168,76,0.12);color:var(--gold-light);font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.38em;text-transform:uppercase;cursor:pointer;border-radius:30px;transition:all 0.3s ease;width:100%;">Send Good Wishes</button>
@@ -2274,8 +2282,8 @@ LANDING PAGE
               <div class="gcbl"></div>
             </div>
           </div>
-          </div>
-          </section>
+        </div>
+      </section>
 
       <!-- RSVP - CON FONDO 1 Y DESTELLOS DORADOS -->
       <section id="rsvp" class="section">
@@ -2291,6 +2299,104 @@ LANDING PAGE
             </div>
           </div>
           <div class="rsvp-wrap">
+
+            <!-- ===== HOTEL SUGGESTIONS CAROUSEL ===== -->
+            <div class="reveal" style="margin-bottom: 2rem;">
+              <div style="text-align:center; margin-bottom: 1.2rem;">
+                <span style="font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.45em;color:rgba(255,255,255,0.35);text-transform:uppercase;display:block;margin-bottom:0.45rem;">Where to Stay</span>
+                <h3
+                  style="font-family:'Great Vibes',cursive;font-size:clamp(2rem,7vw,2.8rem);color:var(--gold-light);text-shadow:0 0 35px rgba(201,168,76,0.35);">
+                  Accommodation</h3>
+                <div class="gold-div" style="width:160px;margin:0.8rem auto;"><span></span>
+                  <div class="dia"></div><span></span>
+                </div>
+              </div>
+
+              <!-- Hotel Carousel Wrapper -->
+              <div style="position:relative;">
+                <!-- Left Arrow -->
+                <button onclick="hotelNav(-1)" style="position:absolute;left:-6px;top:50%;transform:translateY(-50%);z-index:10;width:38px;height:38px;border-radius:50%;background:rgba(10,30,15,0.88);border:1.5px solid var(--gold);color:var(--gold-light);font-size:1.3rem;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.45);transition:background 0.3s;flex-shrink:0;" onmouseover="this.style.background='rgba(201,168,76,0.25)'" onmouseout="this.style.background='rgba(10,30,15,0.88)'">&#8249;</button>
+
+                <!-- Cards track -->
+                <div id="hotel-track" style="overflow:hidden;margin:0 36px;">
+                  <div style="display:flex;transition:transform 0.5s ease;" id="hotel-slides">
+
+                    <!-- Hotel 1 -->
+                    <div style="min-width:100%;padding:0 4px;box-sizing:border-box;">
+                      <a href="https://maps.apple/p/nAaCGjQZ~mT-V2" target="_blank"
+                        style="text-decoration:none;display:block;">
+                        <div
+                          style="background:rgba(10,30,15,0.82);border:1px solid rgba(201,168,76,0.22);border-radius:12px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.4);position:relative;">
+                          <div style="position:relative;height:200px;overflow:hidden;">
+                            <img src="hotel2.PNG" alt="Hotel" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.85) contrast(1.05);transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                            <div
+                              style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(7,26,14,0.9) 100%);">
+                            </div>
+                          </div>
+                          <div style="padding:18px 20px 22px;text-align:center;">
+                            <p
+                              style="font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:0.6rem;">
+                              Suggestion of Accommodation</p>
+                            <div
+                              style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border:1.5px solid var(--gold);border-radius:30px;background:rgba(201,168,76,0.1);color:var(--gold-light);font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.28em;text-transform:uppercase;animation:tapPulse 2.5s ease-in-out infinite;">
+                              <svg viewBox="0 0 24 24" width="13" height="13" fill="var(--gold)">
+                                <path
+                                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                              </svg>
+                              Tap Here
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <!-- Hotel 2 -->
+                    <div style="min-width:100%;padding:0 4px;box-sizing:border-box;">
+                      <a href="https://maps.apple/p/Attm69JVags5e6" target="_blank"
+                        style="text-decoration:none;display:block;">
+                        <div
+                          style="background:rgba(10,30,15,0.82);border:1px solid rgba(201,168,76,0.22);border-radius:12px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.4);position:relative;">
+                          <div style="position:relative;height:200px;overflow:hidden;">
+                            <img src="hotel1.PNG" alt="Hotel" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.85) contrast(1.05);transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                            <div
+                              style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(7,26,14,0.9) 100%);">
+                            </div>
+                          </div>
+                          <div style="padding:18px 20px 22px;text-align:center;">
+                            <p
+                              style="font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:0.6rem;">
+                              Suggestion of Accommodation</p>
+                            <div
+                              style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border:1.5px solid var(--gold);border-radius:30px;background:rgba(201,168,76,0.1);color:var(--gold-light);font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.28em;text-transform:uppercase;animation:tapPulse 2.5s ease-in-out infinite;">
+                              <svg viewBox="0 0 24 24" width="13" height="13" fill="var(--gold)">
+                                <path
+                                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                              </svg>
+                              Tap Here
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+                  </div><!-- /hotel-slides -->
+                </div><!-- /hotel-track -->
+
+                <!-- Right Arrow -->
+                <button onclick="hotelNav(1)" style="position:absolute;right:-6px;top:50%;transform:translateY(-50%);z-index:10;width:38px;height:38px;border-radius:50%;background:rgba(10,30,15,0.88);border:1.5px solid var(--gold);color:var(--gold-light);font-size:1.3rem;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.45);transition:background 0.3s;" onmouseover="this.style.background='rgba(201,168,76,0.25)'" onmouseout="this.style.background='rgba(10,30,15,0.88)'">&#8250;</button>
+              </div>
+
+              <!-- Dots -->
+              <div style="display:flex;justify-content:center;gap:8px;margin-top:14px;">
+                <div id="hotel-dot-0"
+                  style="width:7px;height:7px;border-radius:50%;background:var(--gold);transition:all 0.3s;"></div>
+                <div id="hotel-dot-1"
+                  style="width:7px;height:7px;border-radius:50%;background:rgba(201,168,76,0.3);transition:all 0.3s;">
+                </div>
+              </div>
+            </div>
+            <!-- ===== /HOTEL SUGGESTIONS ===== -->
+
             <div class="contact-list reveal">
               <a href="https://wa.me/16613647731" target="_blank" class="contact-row"
                 style="text-decoration: none; transition: all 0.3s ease; border: 1px solid rgba(201,168,76,0.25);">
@@ -2305,12 +2411,30 @@ LANDING PAGE
                 style="text-decoration: none; transition: all 0.3s ease; border: 1px solid rgba(201,168,76,0.25);">
                 <span class="cicon" style="font-size: 1.4rem; color: #25D366;"><svg viewBox="0 0 24 24" width="22" height="22" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
                 <div>
-                  <p class="clabel" style="color: var(--gold);">Mike</p>
+                  <p class="clabel" style="color: var(--gold);">Michael</p>
                   <span style="color: rgba(255,255,255,0.85); font-size: 0.95rem;">661-364-7730</span>
                 </div>
                 <span style="margin-left: auto; font-size: 0.65rem; color: var(--gold-light); letter-spacing: 0.15em; font-family: 'Cinzel', serif;">CHAT</span>
               </a>
             </div>
+            <!-- ===== ZELLE QR ===== -->
+            <div class="reveal" style="margin: 1.8rem 0 0.5rem; text-align:center;">
+              <div
+                style="background:rgba(10,30,15,0.72);border:1px solid rgba(201,168,76,0.2);border-radius:12px;padding:28px 24px 24px;position:relative;overflow:hidden;backdrop-filter:blur(14px);">
+                <div
+                  style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);">
+                </div>
+                <p
+                  style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.42em;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:0.9rem;">
+                  Monetary Gift</p>
+                <img src="zelle.PNG" alt="Zelle QR Code" style="width:clamp(130px,45vw,180px);height:auto;display:block;margin:0 auto 1.2rem;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,0.45);">
+                <p
+                  style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.92rem,3vw,1.05rem);font-style:italic;color:var(--text-cream);line-height:1.7;max-width:340px;margin:0 auto;letter-spacing:0.04em;">
+                  With heartfelt appreciation, we kindly welcome monetary gifts via Zelle. Details below.</p>
+              </div>
+            </div>
+            <!-- ===== /ZELLE QR ===== -->
+
             <div class="rsvp-box reveal">
               <h3 class="rsvp-title">Confirm Your Attendance</h3>
               <div id="rsvp-fields">
@@ -2359,7 +2483,7 @@ LANDING PAGE
           </div>
 
           <p style="color: var(--text-light); font-family: 'Cinzel', serif; letter-spacing: 0.2em; font-size: 0.78rem;">
-            Mike &amp; Kanisha &nbsp;&bull;&nbsp; September 12, 2026
+            Michael &amp; Kanisha &nbsp;&bull;&nbsp; September 12, 2026
           </p>
 
           <p
@@ -2582,7 +2706,7 @@ setInterval(cd, 1000); cd();
 ======================================== */
 function addCal(e){
   e.preventDefault();
-  window.open('https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mike%20%26%20Kanisha%20Wedding%20Anniversary&dates=20260912T170000/20260913T020000&location=7837%20E%20White%20Ln%2C%20Bakersfield%2C%20CA%2093307','_blank');
+  window.open('https://calendar.google.com/calendar/render?action=TEMPLATE&text=Michael%20%26%20Kanisha%20Wedding%20Anniversary&dates=20260912T170000/20260913T020000&location=7837%20E%20White%20Ln%2C%20Bakersfield%2C%20CA%2093307','_blank');
 }
 
 /* ========================================
@@ -2650,9 +2774,9 @@ function sendRSVP(){
   document.getElementById('rsvp-fields').style.display='none';
   document.getElementById('rsvp-ok').style.display='block';
   var att = document.querySelector('input[name="att"]:checked').value;
-  var s = encodeURIComponent('RSVP - Mike & Kanisha Anniversary');
+  var s = encodeURIComponent('RSVP - Michael & Kanisha Anniversary');
   var b = encodeURIComponent('Name: '+name+'\nPhone: '+document.getElementById('rp').value+'\nEmail: '+document.getElementById('re').value+'\nAttending: '+att+'\nGuests: '+document.getElementById('rg').value);
-  window.location.href = 'mailto:Mike.nisha05@sbcglobal.net?subject='+s+'&body='+b;
+  window.location.href = 'mailto:Michael.nisha05@sbcglobal.net?subject='+s+'&body='+b;
 }
 
 /* ========================================
@@ -2691,12 +2815,38 @@ function sendGoodWishes(){
   var msg  = document.getElementById('gw-msg').value.trim();
   if(!name){ document.getElementById('gw-name').focus(); return; }
   if(!msg){  document.getElementById('gw-msg').focus();  return; }
-  var s = encodeURIComponent('Good Wishes from ' + name + ' — Mike & Kanisha Anniversary');
-  var b = encodeURIComponent('💛 Good Wishes from ' + name + ':\n\n' + msg + '\n\n— Mike & Kanisha Anniversary 2026');
-  window.location.href = 'mailto:Mike.nisha05@sbcglobal.net?subject='+s+'&body='+b;
+  var s = encodeURIComponent('Good Wishes from ' + name + ' — Michael & Kanisha Anniversary');
+  var b = encodeURIComponent('💛 Good Wishes from ' + name + ':\n\n' + msg + '\n\n— Michael & Kanisha Anniversary 2026');
+  window.location.href = 'mailto:Michael.nisha05@sbcglobal.net?subject='+s+'&body='+b;
   document.getElementById('gw-fields').style.display = 'none';
   document.getElementById('gw-ok').style.display = 'block';
 }
+
+/* ========================================
+   HOTEL CAROUSEL
+======================================== */
+(function(){
+  var current = 0;
+  var total = 2;
+  window.hotelNav = function(dir){
+    current = (current + dir + total) % total;
+    document.getElementById('hotel-slides').style.transform = 'translateX(-' + (current * 100) + '%)';
+    for(var i = 0; i < total; i++){
+      var dot = document.getElementById('hotel-dot-' + i);
+      if(dot) dot.style.background = i === current ? 'var(--gold)' : 'rgba(201,168,76,0.3)';
+    }
+  };
+  // Swipe support
+  var startX = 0;
+  var track = document.getElementById('hotel-track');
+  if(track){
+    track.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; });
+    track.addEventListener('touchend', function(e){
+      var dx = e.changedTouches[0].clientX - startX;
+      if(Math.abs(dx) > 40) window.hotelNav(dx < 0 ? 1 : -1);
+    });
+  }
+})();
 
 /* ========================================
    MK LOGO — remove white background via canvas
