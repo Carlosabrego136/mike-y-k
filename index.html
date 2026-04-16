@@ -369,7 +369,8 @@ LANDING PAGE
     /* BIG MK logo - CENTRADO COMO EJEMPLO 3 */
     .mk-logo-wrap {
       position: relative;
-      margin-bottom: 0.5rem;
+      margin-bottom: -1.5rem;
+      margin-top: 2rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -2014,9 +2015,8 @@ LANDING PAGE
                   style="font-family: 'Cinzel', serif; color: var(--gold-light); letter-spacing: 3px; font-size: 1.2rem; margin-bottom: 15px; text-shadow: 2px 2px 10px rgba(0,0,0,0.8);">
                   Villa Punta del Cielo</h3>
 
-                <span style="background: rgba(13, 32, 18, 0.88); color: var(--gold-light); padding: 10px 22px; border-radius: 30px; border: 1px solid var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1rem; letter-spacing: 2px; font-style: italic; backdrop-filter: blur(5px); display: flex; align-items: center; gap: 8px;">
-                  <span style="font-size: 0.75rem; font-family: 'Cinzel', serif; font-style: normal; letter-spacing: 3px; text-transform: uppercase; opacity: 0.85;">Toca aquí</span>
-                <span style="color: var(--gold); font-size: 0.9rem;">&#10022;</span>
+                <span style="background: rgba(13, 32, 18, 0.88); color: var(--gold-light); padding: 10px 22px; border-radius: 30px; border: 1px solid var(--gold); font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase; backdrop-filter: blur(5px); display: inline-flex; align-items: center; gap: 8px;">
+                  Tap Here <span style="color: var(--gold); font-size: 0.85rem;">&#10022;</span>
                 </span>
               </div>
             </div>
@@ -2038,15 +2038,37 @@ LANDING PAGE
         <div class="section-content" style="padding: 60px 20px 55px;">
           <div class="sec-header reveal" style="margin-bottom:1.6rem">
             <span class="sec-label">Attire</span>
-            <h2 class="sec-title">Dress Code</h2>
+            <h2 class="sec-title"
+              style="font-family:'Great Vibes',cursive; font-size:clamp(3rem,11vw,5.5rem); color:var(--gold-light); text-shadow:0 0 40px rgba(201,168,76,0.5);">
+              Dress Code</h2>
           </div>
           <div style="text-align:center" class="reveal">
-            <div class="dc-ring">
-              <span class="dc-icon"><svg viewBox="0 0 64 64" width="52" height="52" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 18c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8-8-3.6-8-8z" fill="var(--gold)"/><path d="M36 18c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8-8-3.6-8-8z" fill="var(--gold-light)"/><path d="M16 56V36c0-4.4 3.6-8 8-8h8c4.4 0 8 3.6 8 8v20" stroke="var(--gold)" stroke-width="2" fill="none"/><path d="M24 28l4 8 4-8" stroke="var(--gold-dark)" stroke-width="1.5" fill="none"/><path d="M32 56V36c0-4.4 3.6-8 8-8h8c4.4 0 8 3.6 8 8v20" stroke="var(--gold-light)" stroke-width="2" fill="none"/><path d="M40 28v6M48 28v6" stroke="var(--gold-dark)" stroke-width="1.5"/><rect x="38" y="32" width="12" height="4" rx="1" fill="var(--gold-dark)"/></svg></span>
+            <div class="dc-ring"
+              style="width:210px;height:210px;border:1.5px solid rgba(201,168,76,0.35);box-shadow:0 0 40px rgba(201,168,76,0.15);">
+              <div style="display:flex;align-items:flex-end;justify-content:center;gap:18px;">
+                <!-- Tuxedo icon -->
+                <svg viewBox="0 0 60 90" width="52" height="78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="30" cy="12" rx="11" ry="12" fill="var(--gold-light)" />
+                  <path d="M10 88 L14 40 Q20 32 30 36 Q40 32 46 40 L50 88Z" fill="var(--gold)" />
+                  <path d="M30 36 L24 52 L30 48 L36 52 L30 36Z" fill="var(--dark-green)" />
+                  <circle cx="30" cy="58" r="2.5" fill="var(--gold-light)" />
+                  <circle cx="30" cy="67" r="2.5" fill="var(--gold-light)" />
+                  <circle cx="30" cy="76" r="2.5" fill="var(--gold-light)" />
+                  <path d="M24 44 Q18 40 14 40" stroke="var(--gold-light)" stroke-width="2" fill="none" />
+                  <path d="M36 44 Q42 40 46 40" stroke="var(--gold-light)" stroke-width="2" fill="none" />
+                </svg>
+                <!-- Gown icon -->
+                <svg viewBox="0 0 50 90" width="40" height="70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="25" cy="11" rx="9" ry="11" fill="var(--gold-light)" />
+                  <path d="M12 30 Q16 22 25 24 Q34 22 38 30 L46 88 L4 88 Z" fill="var(--gold)" />
+                  <path d="M18 26 Q25 32 32 26" stroke="var(--gold-light)" stroke-width="1.5" fill="none" />
+                </svg>
+              </div>
             </div>
-            <p class="dc-top">Please wear</p>
+            <p class="dc-top" style="font-size:0.9rem;letter-spacing:0.5em;">Please wear</p>
             <p class="dc-main">Formal</p>
-            <p class="dc-sub">Black tie encouraged</p>
+            <p class="dc-sub" style="font-size:0.88rem;letter-spacing:0.32em;color:var(--gold-light);opacity:0.9;">Black
+              tie encouraged</p>
           </div>
         </div>
       </section>
@@ -2126,6 +2148,48 @@ LANDING PAGE
 
       <!-- EXTRA GALLERY - CON FONDO 3 -->
       <section id="extra-gallery" class="section">
+
+        <!-- GOOD WISHES - SECCION OCULTA/INTEGRADA -->
+        <section id="good-wishes"
+          style="position:relative;padding:70px 24px 60px;text-align:center;background:rgba(7,26,14,0.0);overflow:hidden;">
+          <div class="section-bg section-bg-2" style="opacity:0.55;"></div>
+          <div class="section-overlay"></div>
+          <div style="position:relative;z-index:2;">
+            <div class="sec-header reveal" style="margin-bottom:2rem;">
+              <span class="sec-label" style="letter-spacing:4px;font-size:0.65rem;">For the Couple</span>
+              <h2
+                style="font-family:'Great Vibes',cursive;font-size:clamp(3rem,11vw,5rem);color:var(--gold-light);text-shadow:0 0 40px rgba(201,168,76,0.45);line-height:1.1;">
+                Good<br><span style="font-family:'Cinzel',serif;font-size:clamp(1rem,4vw,1.8rem);letter-spacing:0.35em;color:var(--gold-light);font-weight:600;">WISHES</span>
+              </h2>
+              <div class="gold-div" style="width:160px;margin:1rem auto;"><span></span>
+                <div class="dia"></div><span></span>
+              </div>
+            </div>
+            <div class="reveal" style="max-width:500px;margin:0 auto;">
+              <!-- Tarjeta tipo papel texturizado -->
+              <div id="gw-card"
+                style="background:rgba(245,234,208,0.08);border:1px solid rgba(201,168,76,0.22);border-radius:10px;padding:32px 24px 28px;backdrop-filter:blur(14px);box-shadow:0 10px 40px rgba(0,0,0,0.35);">
+                <div id="gw-fields">
+                  <p
+                    style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(255,255,255,0.55);letter-spacing:0.08em;margin-bottom:1.5rem;font-style:italic;">
+                    Leave a message for Mike &amp; Kanisha</p>
+                  <input id="gw-name" type="text" placeholder="Your name" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(201,168,76,0.28);border-radius:6px;padding:12px 16px;color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.05rem;margin-bottom:12px;outline:none;letter-spacing:0.05em;">
+                  <textarea id="gw-msg" rows="4" placeholder="Write your wishes here..." style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(201,168,76,0.28);border-radius:6px;padding:12px 16px;color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.05rem;resize:none;outline:none;letter-spacing:0.05em;margin-bottom:20px;"></textarea>
+                  <button onclick="sendGoodWishes()" style="display:inline-block;padding:14px 40px;border:1.5px solid var(--gold);background:rgba(201,168,76,0.12);color:var(--gold-light);font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.38em;text-transform:uppercase;cursor:pointer;border-radius:30px;transition:all 0.3s ease;width:100%;">Send Good Wishes</button>
+                </div>
+                <div id="gw-ok" style="display:none;padding:20px 0;">
+                  <p
+                    style="font-family:'Great Vibes',cursive;font-size:2.6rem;color:var(--gold-light);text-shadow:0 0 30px rgba(201,168,76,0.5);">
+                    Thank you!</p>
+                  <p
+                    style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(255,255,255,0.6);margin-top:0.5rem;font-style:italic;">
+                    Your wishes have been sent ✦</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- /GOOD WISHES -->
         <div class="section-bg section-bg-3"></div>
         <div class="section-overlay"></div>
         <div class="section-content" style="padding: 60px 14px;">
@@ -2479,6 +2543,8 @@ function enterSite(e){
     }, 700);
     window.scrollTo(0,0);
     initReveal(); initTL();
+    // Autoplay music on enter
+    setTimeout(function(){ startMusic(); }, 800);
   }, 900);
 }
 
@@ -2577,25 +2643,47 @@ function sendRSVP(){
    MUSIC PLAYER
 ======================================== */
 var musicOn = false;
-var ytPlayer = null;
+function startMusic(){
+  if(musicOn) return;
+  var btn = document.getElementById('playBtn');
+  var f = document.getElementById('ytf');
+  if(!f){
+    f = document.createElement('iframe');
+    f.id='ytf';
+    f.src='https://www.youtube.com/embed/aL14tJ8O6No?autoplay=1&loop=1&playlist=aL14tJ8O6No&controls=0&start=0&mute=0&enablejsapi=1';
+    f.style.cssText='position:fixed;bottom:-300px;left:-300px;width:1px;height:1px;opacity:0;pointer-events:none;';
+    f.allow='autoplay; encrypted-media';
+    f.setAttribute('loading','eager');
+    document.body.appendChild(f);
+  }
+  btn.innerHTML='&#9646;&#9646;'; musicOn=true;
+}
 function toggleMusic(){
   var btn = document.getElementById('playBtn');
   if(!musicOn){
-    var f = document.getElementById('ytf');
-    if(!f){
-      f = document.createElement('iframe');
-      f.id='ytf';
-      f.src='https://www.youtube.com/embed/aL14tJ8O6No?autoplay=1&loop=1&playlist=aL14tJ8O6No&controls=0&start=0&enablejsapi=1';
-      f.style.cssText='position:fixed;bottom:-300px;left:-300px;width:1px;height:1px;opacity:0;pointer-events:none;';
-      f.allow='autoplay; encrypted-media'; 
-      f.setAttribute('loading', 'eager');
-      document.body.appendChild(f);
-    }
-    btn.innerHTML='&#9646;&#9646;'; musicOn=true;
+    startMusic();
   } else {
     var ff=document.getElementById('ytf'); if(ff) ff.remove();
     btn.innerHTML='&#9654;'; musicOn=false;
   }
+}
+
+/* ========================================
+   GOOD WISHES — send to WhatsApp
+======================================== */
+function sendGoodWishes(){
+  var name = document.getElementById('gw-name').value.trim();
+  var msg  = document.getElementById('gw-msg').value.trim();
+  if(!name){ document.getElementById('gw-name').focus(); return; }
+  if(!msg){  document.getElementById('gw-msg').focus();  return; }
+  var text = encodeURIComponent('💛 Good Wishes from ' + name + ':\n\n' + msg + '\n\n— Mike & Kanisha Anniversary 2026');
+  // Opens WhatsApp for both numbers sequentially (user picks or opens both)
+  var wa1 = 'https://wa.me/16618083600?text=' + text;
+  var wa2 = 'https://wa.me/16618083601?text=' + text;
+  window.open(wa1, '_blank');
+  setTimeout(function(){ window.open(wa2, '_blank'); }, 800);
+  document.getElementById('gw-fields').style.display = 'none';
+  document.getElementById('gw-ok').style.display = 'block';
 }
 
 /* ========================================
