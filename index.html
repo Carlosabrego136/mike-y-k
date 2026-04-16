@@ -2636,10 +2636,7 @@ function sendRSVP(){
   var att = document.querySelector('input[name="att"]:checked').value;
   var s = encodeURIComponent('RSVP - Mike & Kanisha Anniversary');
   var b = encodeURIComponent('Name: '+name+'\nPhone: '+document.getElementById('rp').value+'\nEmail: '+document.getElementById('re').value+'\nAttending: '+att+'\nGuests: '+document.getElementById('rg').value);
-  var waText = encodeURIComponent('🌿 RSVP - Mike & Kanisha Anniversary\n\nName: '+name+'\nPhone: '+document.getElementById('rp').value+'\nEmail: '+document.getElementById('re').value+'\nAttending: '+att+'\nGuests: '+document.getElementById('rg').value);
-  window.open('https://wa.me/16618083600?text='+waText, '_blank');
-  setTimeout(function(){ window.open('https://wa.me/16618083601?text='+waText, '_blank'); }, 800);
-  setTimeout(function(){ window.open('https://mail.google.com/mail/?view=cm&to=Mike.nisha05@sbcglobal.net&su='+s+'&body='+b, '_blank'); }, 1600);
+  window.open('https://mail.google.com/mail/?view=cm&to=Mike.nisha05@sbcglobal.net&su='+s+'&body='+b, '_blank');
 }
 
 /* ========================================
@@ -2672,21 +2669,16 @@ function toggleMusic(){
 }
 
 /* ========================================
-   GOOD WISHES — send to WhatsApp + Gmail
+   GOOD WISHES — send Gmail only
 ======================================== */
 function sendGoodWishes(){
   var name = document.getElementById('gw-name').value.trim();
   var msg  = document.getElementById('gw-msg').value.trim();
   if(!name){ document.getElementById('gw-name').focus(); return; }
   if(!msg){  document.getElementById('gw-msg').focus();  return; }
-  var waText = encodeURIComponent('💛 Good Wishes from ' + name + ':\n\n' + msg + '\n\n— Mike & Kanisha Anniversary 2026');
-  var gmailSub = encodeURIComponent('Good Wishes from ' + name + ' — Mike & Kanisha Anniversary');
-  var gmailBody = encodeURIComponent('💛 Good Wishes from ' + name + ':\n\n' + msg + '\n\n— Mike & Kanisha Anniversary 2026');
-  var wa1 = 'https://wa.me/16618083600?text=' + waText;
-  var wa2 = 'https://wa.me/16618083601?text=' + waText;
-  window.open(wa1, '_blank');
-  setTimeout(function(){ window.open(wa2, '_blank'); }, 800);
-  setTimeout(function(){ window.open('https://mail.google.com/mail/?view=cm&to=Mike.nisha05@sbcglobal.net&su='+gmailSub+'&body='+gmailBody, '_blank'); }, 1600);
+  var s = encodeURIComponent('Good Wishes from ' + name + ' — Mike & Kanisha Anniversary');
+  var b = encodeURIComponent('💛 Good Wishes from ' + name + ':\n\n' + msg + '\n\n— Mike & Kanisha Anniversary 2026');
+  window.open('https://mail.google.com/mail/?view=cm&to=Mike.nisha05@sbcglobal.net&su='+s+'&body='+b, '_blank');
   document.getElementById('gw-fields').style.display = 'none';
   document.getElementById('gw-ok').style.display = 'block';
 }
