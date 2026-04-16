@@ -2636,7 +2636,7 @@ function sendRSVP(){
   var att = document.querySelector('input[name="att"]:checked').value;
   var s = encodeURIComponent('RSVP - Mike & Kanisha Anniversary');
   var b = encodeURIComponent('Name: '+name+'\nPhone: '+document.getElementById('rp').value+'\nEmail: '+document.getElementById('re').value+'\nAttending: '+att+'\nGuests: '+document.getElementById('rg').value);
-  window.open('https://mail.google.com/mail/?view=cm&to=Mike.nisha05@sbcglobal.net&su='+s+'&body='+b, '_blank');
+  window.location.href = 'mailto:Mike.nisha05@sbcglobal.net?subject='+s+'&body='+b;
 }
 
 /* ========================================
@@ -2678,7 +2678,7 @@ function sendGoodWishes(){
   if(!msg){  document.getElementById('gw-msg').focus();  return; }
   var s = encodeURIComponent('Good Wishes from ' + name + ' — Mike & Kanisha Anniversary');
   var b = encodeURIComponent('💛 Good Wishes from ' + name + ':\n\n' + msg + '\n\n— Mike & Kanisha Anniversary 2026');
-  window.open('https://mail.google.com/mail/?view=cm&to=Mike.nisha05@sbcglobal.net&su='+s+'&body='+b, '_blank');
+  window.location.href = 'mailto:Mike.nisha05@sbcglobal.net?subject='+s+'&body='+b;
   document.getElementById('gw-fields').style.display = 'none';
   document.getElementById('gw-ok').style.display = 'block';
 }
