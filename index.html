@@ -2654,27 +2654,26 @@ function sendRSVP(){
    MUSIC PLAYER
 ======================================== */
 var musicOn = false;
+var audioEl = null;
+
 function startMusic(){
   if(musicOn) return;
   var btn = document.getElementById('playBtn');
-  var f = document.getElementById('ytf');
-  if(!f){
-    f = document.createElement('iframe');
-    f.id='ytf';
-    f.src='https://www.youtube.com/embed/aL14tJ8O6No?autoplay=1&loop=1&playlist=aL14tJ8O6No&controls=0&start=0&mute=0&enablejsapi=1';
-    f.style.cssText='position:fixed;bottom:-300px;left:-300px;width:1px;height:1px;opacity:0;pointer-events:none;';
-    f.allow='autoplay; encrypted-media';
-    f.setAttribute('loading','eager');
-    document.body.appendChild(f);
+  if(!audioEl){
+    audioEl = new Audio('audio.mp3');
+    audioEl.loop = true;
+    audioEl.volume = 0.7;
   }
+  audioEl.play().catch(function(err){ console.log('Autoplay bloqueado:', err); });
   btn.innerHTML='&#9646;&#9646;'; musicOn=true;
 }
+
 function toggleMusic(){
   var btn = document.getElementById('playBtn');
   if(!musicOn){
     startMusic();
   } else {
-    var ff=document.getElementById('ytf'); if(ff) ff.remove();
+    if(audioEl){ audioEl.pause(); }
     btn.innerHTML='&#9654;'; musicOn=false;
   }
 }
