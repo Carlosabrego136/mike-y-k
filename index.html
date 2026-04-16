@@ -982,113 +982,118 @@ LANDING PAGE
     }
 
     /* ==============================
-   LOCATION - MEJORADO
-============================== */
+    LOCATION - MEJORADO
+    ============================== */
     #location {
-      padding: 70px 20px;
-      position: relative;
+    padding: 70px 20px;
+    position: relative;
     }
-
+    
     .loc-card {
-      max-width: 460px;
-      margin: 0 auto;
-      background: rgba(10, 28, 15, 0.75);
-      border: 1px solid rgba(201, 168, 76, 0.2);
-      border-radius: 10px;
-      padding: 36px 24px;
-      text-align: center;
-      backdrop-filter: blur(18px);
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    max-width: 460px;
+    margin: 0 auto;
+    background: rgba(10, 28, 15, 0.75);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    border-radius: 10px;
+    padding: 36px 24px;
+    text-align: center;
+    backdrop-filter: blur(18px);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     }
-
+    
     .loc-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
-
+    
     .venue-name {
-      font-family: 'Great Vibes', cursive;
-      font-size: clamp(1.9rem, 6.5vw, 2.8rem);
-      color: var(--gold-light);
-      margin-bottom: 1.2rem;
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(1.9rem, 6.5vw, 2.8rem);
+    color: var(--gold-light);
+    margin-bottom: 1.2rem;
     }
-
+    
     .loc-map-wrap {
-      width: 100%;
-      overflow: hidden;
-      border-radius: 7px;
-      margin: 1rem 0 1.6rem;
-      cursor: pointer;
-      position: relative;
-      /* No border/frame — just the image */
+    width: 100%;
+    overflow: hidden;
+    border-radius: 7px;
+    margin: 1rem 0 1.6rem;
+    cursor: pointer;
+    position: relative;
     }
-
+    
     .loc-map-wrap img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      height: 240px;
-      transition: transform 0.5s ease;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    height: 240px;
+    transition: transform 0.5s ease;
     }
-
+    
     .loc-map-wrap:hover img {
-      transform: scale(1.04);
+    transform: scale(1.04);
     }
-
+    
     .loc-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.3s;
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s;
     }
-
+    
     .loc-map-wrap:hover .loc-overlay {
-      opacity: 1;
-      background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.38);
     }
-
+    
     .loc-overlay span {
-      font-family: 'Cinzel', serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.3em;
-      color: var(--gold-light);
-      background: rgba(0, 0, 0, 0.6);
-      padding: 8px 20px;
-      border-radius: 20px;
-      border: 1px solid rgba(201, 168, 76, 0.4);
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--gold-light);
+    background: rgba(0, 0, 0, 0.65);
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(201, 168, 76, 0.6);
+    box-shadow: 0 0 12px rgba(201, 168, 76, 0.3);
+    animation: tapPulse 2.5s ease-in-out infinite;
     }
-
+    
+    @keyframes tapPulse {
+    0%, 100% { box-shadow: 0 0 10px rgba(201, 168, 76, 0.3); }
+    50% { box-shadow: 0 0 22px rgba(201, 168, 76, 0.7); }
+    }
+    
     .dotted {
-      border: none;
-      border-top: 1px dotted rgba(201, 168, 76, 0.28);
-      margin: 1rem 0;
+    border: none;
+    border-top: 1px dotted rgba(201, 168, 76, 0.28);
+    margin: 1rem 0;
     }
-
+    
     .det-label {
-      font-family: 'Cinzel', serif;
-      font-size: 0.66rem;
-      letter-spacing: 0.3em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 0.25rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
     }
-
+    
     .det-val {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.85);
-      line-height: 1.65;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.65;
     }
 
     /* ==============================
